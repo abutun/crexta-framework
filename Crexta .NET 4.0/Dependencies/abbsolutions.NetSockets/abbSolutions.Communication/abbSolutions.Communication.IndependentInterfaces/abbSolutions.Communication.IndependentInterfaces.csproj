@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{038E854A-D730-4542-9507-80CE29ABCAB9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>abbSolutions.Communication.IndependentInterfaces</RootNamespace>
+    <AssemblyName>abbSolutions.Communication.IndependentInterfaces</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\SPVB\StockProgram\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ILogListener.cs" />
+    <Compile Include="ISuppliesID.cs" />
+    <Compile Include="IIDSupplier.cs" />
+    <Compile Include="ILogger.cs" />
+    <Compile Include="ILockable.cs" />
+    <Compile Include="ISupportsEnqueueDequeue.cs" />
+    <Compile Include="ISupportsRemove.cs" />
+    <Compile Include="ISupportsClear.cs" />
+    <Compile Include="ISupportsAdd.cs" />
+    <Compile Include="ISupportsRemoveByIndex.cs" />
+    <Compile Include="ISupportsAddByIndex.cs" />
+    <Compile Include="ISupportsFindSingle.cs" />
+    <Compile Include="ISupportsFindMany.cs" />
+    <Compile Include="ICanExecute.cs" />
+    <Compile Include="ICanCancel.cs" />
+    <Compile Include="IExecutableWorkItem.cs" />
+    <Compile Include="IMultipleItems.cs" />
+    <Compile Include="ISchedulingEngine.cs" />
+    <Compile Include="ISupportsAddRemoveClear.cs" />
+    <Compile Include="ISupportsCount.cs" />
+    <Compile Include="ISupportsFind.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\abbSolutions.Communication.ThreadSafeObjects\abbSolutions.Communication.ThreadSafeObjects.csproj">
+      <Project>{4DE75299-58AD-4C2C-B052-C38B4F4CD7F4}</Project>
+      <Name>abbSolutions.Communication.ThreadSafeObjects</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

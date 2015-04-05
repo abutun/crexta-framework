@@ -1,0 +1,187 @@
+15.06.2010
+A FRESH BEGINNING!!!
+
+
+26.06.2010
+	+ Client tarafýnda Crawler çalýþýrken Server kapatýlýrsa Client'ýn Crawler'ý da durdurmasý lazým! Kontrol et!
+	
+	+ Server tarafýnda Client'tan gelen URL'ler hep insert ediliyor! Update niye yok!
+		* Ayný URL'ler denk gelmiyordur belki! Haa yok, 2 saatlik bir zaman limitimiz var update için! Yani þöyle ki,
+		öncelikle update için URL'in crawl edilmiþ olmasý lazým (2 saati de geçmiþ olmalý crawl date!)
+	
+	- Client çalýþýrken (belki Server da!) rule'lar dosyadan yüklenirken hata veriyor. Bu dosya kullanýmda diye!!! Bu ÖNEMLÝ!!!
+		* Cache yapýsý eklendi! Bir nebze düzeltir diye umuyorum.
+		* 15.10.2010 - Cache yapýsý düzeltildi.
+		
+	+ Crawler maxthread vs çalýþmýyor sanýrým.
+		* Düzeltildi. Crawler.cs içerisindeki,
+		
+		/// <summary>
+		/// The actual worker code for the crawler
+		/// </summary>
+		private void WorkerProc()
+		{
+            if (ThreadsInUse < MaximumThreadCount)
+            {
+                using (m_ThreadInUse.GetCounterScope())
+                {
+                    while (WaitingQueueLength > 0)
+                    {
+                        ProcessNextInQueue();
+
+                        // Sleep before next download
+                        if (DownloadDelay.HasValue && DownloadDelay.Value != TimeSpan.Zero)
+                        {
+                            Thread.Sleep(DownloadDelay.Value);
+                        }
+                    }
+                }
+
+                StartNew();
+            }
+		}
+		
+		metoda kontrol ifadesi yazýldý.
+		
+	+ Server tarafýnda TBL_QUEUE ye eklenen URL'lerin miniURL'leri görünmüyor.
+		* miniURL'i önce set etmiþiz, sonra boþ string'e set etmiþiz. Çözüldü.
+		
+		
+15.10.2010
+	
+	- BÜYÜK/KÜÇÜK HARF OLAYINI HALLETMEK LAZIM!
+		* Çözüm 1: Bir kelimenin veri tabanýna hem büyük hem küçük harfli þeklini gireriz. Yani WINDOWS için mesela,
+			windows (WÝNDOWS ile ayný)
+			wýndows (WINDOWS ile ayný)
+			
+		* Hangi kelimenin hangi dile ait olduðunu bulacaðýz! Ona göre büyük küçük harf þeklini belirleyeceðiz.
+		
+16.10.2010
+	
+	+ Client'lar yazýlým güncellemelerinden ve liste güncellemelerinden anýnda haberdar olmalýlar. Ve bu güncellemeleri hemen 
+	  kendilerine yansýtmalýlar.
+	  
+	  SERVER
+			- Beirli aralýklarla güncelleme olup olmadýðýný kontrol etmeli.
+			- Güncelleme olduðunda bunu client'lara bildirmeli.
+			- Güncelleme bilgisini alan Cleint'lar güncellemeleri kendilerine yansýtmalýlar.
+			
+			16.10.2010	- OK, Tamamlandý.
+			
+	+ Ürün týklamalarý sayýlmalý (Maðaza-ürün istatistikleri)
+	
+			16.10.2010	- TBL_CLICKS tablosu oluþturuldu.
+			
+				TBL_CLICKS
+					+ id
+					+ itemtype (product, car, hotel, estate)
+					+ itemid
+					+ ip
+					+ referrer
+					+ date
+					
+22.01.2011 (UZUN BÝR ARADAN SONRA - çok deðil 3 ay)
+
+	+ YENÝ BÝR BRANCH OLUÞTUR PROJE ÝÇÝN!!!
+
+	+ URLFounder ve DataExtractor için belirli bir optimizasyon deðeri belirlenmeli, web sitelerinden yasaklanmamalarý için. Þöyle bir þey olabilir,
+		* Her 50 istekten sonra 10 saniye bekle
+			
+	+ URLFounder RSS (ve belki XML, formatýný biz belirleriz) geri beslemesi ile de veri çekebilmeli! (RSS'ten URL çek)
+		* RSS listesi kýsa ve siteye ait RSS sayýsý birden fazla olabilir. Bu nedenle URLFounder'larýn, belirlenen RSS listelerini, ayarlar bölümünden
+		belirlencek belirli bir periyotla kontrol etmeleri daha uygun olabilir.
+	
+	- DataExtractor XML fotmatýnda veri çekebilmeli! (XML'den veri çek)
+	
+	+ URL'ler kýsaltýlmak istenmiyor olabilir, bunu bir ayar olarak koyalým.
+	
+	+ UF = 4*DE oranýný ayarlar bölümünde kendimiz yapabilelim. (Server tarafýnda, herbir server individual yapabilsin bu iþi)
+	
+	+ SQL Server 2005 -> SQL Server 2008 dönüþümünü yapalým.
+	
+	+ NetTiers -> LINQ dönüþümünü yapalým. (zor oldu ama yaptým! 25.01.2011)
+	
+	+ Rule dosyalarýný veri tabanýna kayýt edelim. Client'lar ilgili sitelere ait rule listelerini Server'dan request etsinler belirli aralýklarla.
+      Bir request sonucunda aldýklarý bilgileri cache'leyip belirli bir süre boyunca kullansýnlar, sonra yine istesinler vs. (periyot için ayrýca
+      random bir deðer oluþtursun client'lar, böylece ayný anda binlerce client request etmemiþ olsun)
+	  Bu periyotu da herbir Client için ayarlar bölümünden set edelim (minimum deðer olsun, 5 dk gibi ama Server bir rule deðiþti derse, o rule
+	  bilgisini bütün client'lar güncellesin)
+	  30.01.2011
+		- Rule datalarý çok büyük boyutlu deðil! Dolayýsýyla burada bir cache yapýsý oluþturulmasý çok öncelikli bir durum mudur? Deðerlendirmek
+		  gerekir. Belki de hiç gerek olmayabilir böyle bir yapýya.
+	
+
+27.01.2011
+
+	+ Server tarafýnda baðlý client'lar için IDLE deðeri belirlendi. Bu deðerin üzerinde IDLE olan client'lar otomatik olarak disconnect ediliyor 
+	  server tarafýndan.
+	  
+30.01.2011
+	
+	+ Kriterlere eposta adreslerini -birden fazla ayný sonuç içeren sonuçlar- ve dosyalarý de alabilecek bir yapý eklenmeli.
+	
+20.02.2011
+
+	- Client'lar Schedule edilebilmeli.
+
+09.03.2011
+	
+	+ Store crawl start-end times?, url crawl start-finish times? must be handled/updated.
+	+ firsat.mekanist.net (anchor linkleri bulunamýyor! Ncrawler issue)
+	  Bu durumun NCrawler ile ilgisi yokmuþ! Durum market.mekanist.net üzerindeki linklerin firsat.mekanist.net'e verilmiþ olmasý idi. Yani farklý bir 
+	  subdomain'e yönlendiriliyordu! CREXTA_EXTENDED tablosunda, Extra Domains alanýna yeni domain eklendi, sorun ortadan kayboldu :)
+
+24.03.2011
+	
+	+ Perfect Hash (Long), TurkCrawler eski versiyonlarýný göz önünde bulundurarak
+	  Long + String, þeklinde ikili perfect hash uygula. Gerekli DB deðiþikliklerini de yap!
+		* Ýkili hash hesaplanýyor (long + string) ancak yalnýzca long eþleþme için kullanýlýyor. Ýlerde belki herhangi bir çakýþma olursa, string olaný da
+		  kullanabiliriz.
+
+27.03.2010
+
+	+ Perfect Hash her defasýnda farklý mý sonuçlanýyor??? (Ayný string için!) ARAÞTIR.
+	  FARKLI ÇIKMIYOR, her defasýnda AYNI sonuç dönüyor.
+
+01.06.2011
+
+	+ DB_MAPPINGS tablosu oluþtur ve Explorer'ýn Company'lere özel çalýþmasýný (ya da Company seçimine izin vermesini belki de) saðla.
+	- Crexta projesine ait nihayi son test ve kontrolleri yap.
+	+ Crexta.Live altýnda bir API mantýðý oluþtur (web servisleri ve JSON) ve bu yapý üzerinden müþterilere hizmet API'si saðla 
+	  (isteyen istediði þekilde kullansýn verileri, sen sadece üzerine düþeni yap! bu çok önemli!).
+	- dailytitles.com sitesini Crexta alt yapýsýný kullanarak implemente et (sonrasýnda da fýrsat sitesi gelecek zaten).
+
+05.06.2011
+
+	+ Veri tabaný COLLATION deðerini Latin1_General_CI_AS olarak deðiþtir.
+	+ DB_FILEDS özelliðini Explorer'da Criteria ekranýna uyarla!
+	+ Kodu SVN'e taþý.
+
+06.06.2011
+
+	- Tüm sistem alt yapýsýný WCF (Windows Communication Foundation) ile güncelleþtir.
+	  * Web Services güncelle
+	  * Client-Server communication güncelle
+
+07.06.2011
+
+	+ Explorer'da RuleId seçilmeyen ve aktif olan CREXTOR'lar KIRMIZI olarak listelensin.
+	+ RSS Resource Link Discovery!!! (RSS LÝNKLERÝ DÝZÝ OLARAK GÝRÝLÝYOR ARTIK, bir nebze derdimize derman olur)
+
+08.06.2011
+
+	+ Server tarafýnda gelen XML dökümaný insert edilirken sorun var? Her queue item için ayný XML insert ediliyor!
+		* Burada gelen XML dökümanýný CrextorId bazýnda gruplayýp o þekilde insert etmeliyiz RESULTS tablosuna...Dikkat!
+	+ ResourceKey bir þekilde Server'a iletilebilmeliyiz! 
+
+16.06.2011
+
+	+ API sonuçlarýnda duplicate sonuçlar dönüyor! (dönmüyormuþ, kafam karýþtý herhalde!)
+
+19.06.2011
+
+	- Crextor-Rule eþleþmesi olmuþsa, Rule Validation yapýlmalý! (regex pattern var mý? vs)
+	- Bazý sonuçlarda dil kaynaklý karakter sorunu var (cumhuriyet gazetesi misal)
+	- Client'lar Schedule edilebilmeli. (bkz. 20.02.2011) / Crextor'lar schedule edilebilecek artýk :)
+
+ARTIK BUGNET.ABBSOLUTOINS.COM ÜZERÝNDEN YAPILACAKLARI OLUÞTURUYORUM.

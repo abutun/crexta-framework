@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0ED2426D-6BBA-4535-BC90-80CE54498777}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>abbSolutions.Communication.Interfaces</RootNamespace>
+    <AssemblyName>abbSolutions.Communication.Interfaces</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Basic\IHasFriendlyName.cs" />
+    <Compile Include="Basic\IHasLocation.cs" />
+    <Compile Include="Basic\IFromTemplate.cs" />
+    <Compile Include="Basic\IHasWeight.cs" />
+    <Compile Include="Basic\IHasSize.cs" />
+    <Compile Include="Basic\IHasTemplateID.cs" />
+    <Compile Include="Basic\IHasType.cs" />
+    <Compile Include="Basic\IHasCategory.cs" />
+    <Compile Include="Basic\IGetSetValueByName.cs" />
+    <Compile Include="Basic\IDynamicEnumEntry.cs" />
+    <Compile Include="Basic\IQuickCopy.cs" />
+    <Compile Include="Collections\IObjectTemplateCollection.cs" />
+    <Compile Include="Collections\IGameObjectTemplates.cs" />
+    <Compile Include="Collections\IObjectCollection.cs" />
+    <Compile Include="Collections\IGameObjects.cs" />
+    <Compile Include="Collections\ITerrainCollection.cs" />
+    <Compile Include="Collections\ITerrains.cs" />
+    <Compile Include="Collections\IAbilityTemplates.cs" />
+    <Compile Include="Basic\IHasClassTypeName.cs" />
+    <Compile Include="Communication\ICommunicationsProtocol.cs" />
+    <Compile Include="Communication\ICommOutgoingConnection.cs" />
+    <Compile Include="Communication\ICommunicationsBase.cs" />
+    <Compile Include="Communication\ICommClientIssueCommands.cs" />
+    <Compile Include="Communication\ICommIncomingConnection.cs" />
+    <Compile Include="Communication\ICommServer.cs" />
+    <Compile Include="Communication\ICommServerReceivesCommands.cs" />
+    <Compile Include="Communication\IIncomingMessageHandler.cs" />
+    <Compile Include="Communication\IMapIDToControlReceiver.cs" />
+    <Compile Include="Communication\INewMessageEventArgs.cs" />
+    <Compile Include="Communication\ITrackBytes.cs" />
+    <Compile Include="ControlAndChangeNotification\IChangeMessage.cs" />
+    <Compile Include="ControlAndChangeNotification\IChangeMessageBroadcaster.cs" />
+    <Compile Include="ControlAndChangeNotification\IChangeMessageListener.cs" />
+    <Compile Include="ControlAndChangeNotification\IChangeMessageReceiver.cs" />
+    <Compile Include="ControlAndChangeNotification\IChangeNotifier.cs" />
+    <Compile Include="ControlAndChangeNotification\IControlCommand.cs" />
+    <Compile Include="ControlAndChangeNotification\IControlReceiver.cs" />
+    <Compile Include="ControlAndChangeNotification\IControlResponse.cs" />
+    <Compile Include="ControlAndChangeNotification\IMessage.cs" />
+    <Compile Include="IStorageObject.cs" />
+    <Compile Include="InterfacesForClassDiagram.cs" />
+    <Compile Include="EntityAndAbility\IOwnsObjects.cs" />
+    <Compile Include="IntentionStateAction\IEnablesIntentions.cs" />
+    <Compile Include="IntentionStateAction\IHasStates.cs" />
+    <Compile Include="EntityAndAbility\IHasAbilities.cs" />
+    <Compile Include="Objects\IGameObjectTemplate.cs" />
+    <Compile Include="Objects\IGameObject.cs" />
+    <Compile Include="IntentionStateAction\ICanHaveIntent.cs" />
+    <Compile Include="ITerrain.cs" />
+    <Compile Include="Parameters\IRequiresParameters.cs" />
+    <Compile Include="Parameters\IParameterCategoryAndType.cs" />
+    <Compile Include="PluginInterfaces\ITypeDescription.cs" />
+    <Compile Include="PluginInterfaces\IPerformsInitialization.cs" />
+    <Compile Include="PluginInterfaces\IPersistsWorld.cs" />
+    <Compile Include="Collections\IAbilityCollection.cs" />
+    <Compile Include="EntityAndAbility\IAbility.cs" />
+    <Compile Include="EntityAndAbility\IAbilityTemplate.cs" />
+    <Compile Include="IntentionStateAction\ISingleAction.cs" />
+    <Compile Include="Collections\IAllEntities.cs" />
+    <Compile Include="Parameters\IParameter.cs" />
+    <Compile Include="Collections\IParameterCollection.cs" />
+    <Compile Include="Parameters\IParameterValue.cs" />
+    <Compile Include="Basic\IEntityAssociatedID.cs" />
+    <Compile Include="Basic\IChanged.cs" />
+    <Compile Include="Basic\IDirection.cs" />
+    <Compile Include="Basic\IDynamicEnum.cs" />
+    <Compile Include="EntityAndAbility\IEntity.cs" />
+    <Compile Include="Collections\IEntityCollection.cs" />
+    <Compile Include="Collections\IEntityLocations.cs" />
+    <Compile Include="IGameEngine.cs" />
+    <Compile Include="Parameters\IHasParameters.cs" />
+    <Compile Include="IntentionStateAction\IIntention.cs" />
+    <Compile Include="Collections\IIntentionQueue.cs" />
+    <Compile Include="Basic\ILocation.cs" />
+    <Compile Include="Basic\IOccupySpace.cs" />
+    <Compile Include="Basic\IPosition.cs" />
+    <Compile Include="Basic\ISize.cs" />
+    <Compile Include="Basic\ISpeed.cs" />
+    <Compile Include="IntentionStateAction\IState.cs" />
+    <Compile Include="Collections\IStateCollection.cs" />
+    <Compile Include="PluginInterfaces\ITypeLookup.cs" />
+    <Compile Include="Basic\IVector4.cs" />
+    <Compile Include="IWorld.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\abbSolutions.Communication.Extensions\abbSolutions.Communication.Extensions.csproj">
+      <Project>{4A5E2C79-E156-45C7-9317-D0A272A411E6}</Project>
+      <Name>abbSolutions.Communication.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\abbSolutions.Communication.IndependentInterfaces\abbSolutions.Communication.IndependentInterfaces.csproj">
+      <Project>{038E854A-D730-4542-9507-80CE29ABCAB9}</Project>
+      <Name>abbSolutions.Communication.IndependentInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\abbSolutions.Communication.ThreadSafeObjects\abbSolutions.Communication.ThreadSafeObjects.csproj">
+      <Project>{4DE75299-58AD-4C2C-B052-C38B4F4CD7F4}</Project>
+      <Name>abbSolutions.Communication.ThreadSafeObjects</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

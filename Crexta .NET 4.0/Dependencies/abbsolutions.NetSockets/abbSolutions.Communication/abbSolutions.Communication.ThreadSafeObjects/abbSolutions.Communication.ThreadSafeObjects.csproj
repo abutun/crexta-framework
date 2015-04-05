@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4DE75299-58AD-4C2C-B052-C38B4F4CD7F4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>abbSolutions.Communication.ThreadSafeObjects</RootNamespace>
+    <AssemblyName>abbSolutions.Communication.ThreadSafeObjects</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cache\IKeyedOnProperty.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interfaces\IDPropertyAttribute.cs" />
+    <Compile Include="Interfaces\ILockable.cs" />
+    <Compile Include="Interfaces\ILogger.cs" />
+    <Compile Include="Interfaces\ILogListener.cs" />
+    <Compile Include="Interfaces\IMultipleItems.cs" />
+    <Compile Include="Interfaces\IReadableAttribute.cs" />
+    <Compile Include="Interfaces\ISuppliesID.cs" />
+    <Compile Include="Interfaces\ISupportsAdd.cs" />
+    <Compile Include="Interfaces\ISupportsAddByIndex.cs" />
+    <Compile Include="Interfaces\ISupportsAddRemoveClear.cs" />
+    <Compile Include="Interfaces\ISupportsClear.cs" />
+    <Compile Include="Interfaces\ISupportsCount.cs" />
+    <Compile Include="Interfaces\ISupportsEnqueueDequeue.cs" />
+    <Compile Include="Interfaces\ISupportsFind.cs" />
+    <Compile Include="Interfaces\ISupportsFindMany.cs" />
+    <Compile Include="Interfaces\ISupportsFindSingle.cs" />
+    <Compile Include="Interfaces\ISupportsRemove.cs" />
+    <Compile Include="Interfaces\ISupportsRemoveByIndex.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ThreadSafeQueue.cs" />
+    <Compile Include="Lockable.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThreadSafeList.cs" />
+    <Compile Include="ThreadSafeLookup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\abbSolutions.Communication.HyperTypeDescriptor\abbSolutions.Communication.HyperTypeDescriptor.csproj">
+      <Project>{CDDEAC07-7F77-4E17-9C1B-995D04AB6859}</Project>
+      <Name>abbSolutions.Communication.HyperTypeDescriptor</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

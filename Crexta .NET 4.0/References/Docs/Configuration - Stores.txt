@@ -1,0 +1,120 @@
+hepsiburada.com
+------------------------------------
+
+Rule
+	(/.*/|/)productDetails.aspx
+	(\?|&)productid=(\w+) / 2
+	(\?|&)categoryid=(\w+) / 2
+
+Criterias
+
+	Product Title
+		Regex
+		Product Name Span Node
+			<span\w*\s*[^>]*id="productName"\w*\s*[^>]*>(.*?)</span> / 1
+			use result as htmlnode = false
+
+	Product Description
+		Regex 
+		Product Description Table Column
+			<td\w*\s*[^>]*id="ProductDescription"\w*\s*[^>]*>(.*?)</td> / 1
+			use result as htmlnode = false
+
+
+kangurum.com
+------------------------------------
+
+Rule
+	(/.*/|/)productDetails.aspx
+	(\?|&)productid=(\w+) / 2
+	(\?|&)categoryid=(\w+) / 2
+
+Criterias
+
+	Product Title
+		Regex
+		Product Name Div Element
+			<div\w*\s*[^>]*class="ProductName2"\w*\s*[^>]*>(.*?)</div>
+			use result as htmlnode = true
+
+	Product Description
+		Regex 
+		Product Description Div Element
+			<div\w*\s*[^>]*id="KNG_PDTab01"\w*\s*[^>]*>(.*?)</div>
+			use result as htmlnode = true
+
+
+
+
+teknosa.com
+------------------------------------
+
+Rule
+	(/.*/|/)productDetails.aspx
+	(\?|&)productid=(\w+) / 2
+	(\?|&)categoryid=(\w+) / 2
+
+Criterias
+
+	Product Title
+		Html Node Collection
+		Product Name Outer Table
+			//table[@width="100%"]//tr//td[@colspan="2"]
+
+		Html Node Item
+		Product Name Node
+			//font[@class="darkblue"]
+			return only node text = true
+
+
+	Product Description
+		Html Node Collection
+		Product Table
+			//table//tr//td[@width="350"]
+
+		Html Node Item
+		Product Node
+			//table//tr//td[@valign="middle"]
+			return only node text = true
+
+
+wendenal.com
+------------------------------------
+
+Rule
+	(/.*/|/)productDetails.aspx
+	(\?|&)productid=(\w+) / 2
+	(\?|&)categoryid=(\w+) / 2
+
+Criterias
+
+	Product Title
+		Html Node Collection
+		Product Name Div Node
+			//div[@class="view_rightContainer"]//div
+
+		Html Node Item
+		Product Name Node
+			//div//p
+			return only node text = true
+
+
+	Product Description
+		Html Node Collection
+		Product Table
+			//table//tr//td[@width="350"]
+
+		Html Node Item
+		Product Div Node
+			//div[@class="FiyatBilgisi"]
+
+//div[@class="place-infocard"]
+//div[@class="place-info"]
+//table//tr[0]//td[1]
+
+exclude list
+<div\w*\s*[^>]*>(.*?)</div>
+<h3\w*\s*[^>]*>(.*?)</h3>
+
+			return only node text = true
+			return node as html node = true

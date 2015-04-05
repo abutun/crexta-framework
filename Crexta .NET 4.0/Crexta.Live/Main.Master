@@ -1,0 +1,163 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="Crexta.Live.masterpages.Main" %>
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<title>Crexta - Ana Sayfa</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="/css/reset.css" type="text/css" media="all" />
+<link rel="stylesheet" href="/css/layout.css" type="text/css" media="all" />
+<link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+<link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" /> 
+<script type="text/javascript" src="/js/jquery-1.4.2.js"></script>
+<script type="text/javascript" src="/js/cufon-yui.js"></script>
+<script type="text/javascript" src="/js/cufon-replace.js"></script> 
+<script type="text/javascript" src="/js/Myriad_Pro_300.font.js"></script>
+<script type="text/javascript" src="/js/Myriad_Pro_400.font.js"></script>
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1306358-22']);
+    _gaq.push(['_setDomainName', 'crexta.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+<!--[if lt IE 9]>
+	<script type="text/javascript" src="http://info.template-help.com/files/ie6_warning/ie6_script_other.js"></script>
+	<script type="text/javascript" src="js/html5.js"></script>
+<![endif]-->
+<!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {
+       filter: none;
+    }
+  </style>
+<![endif]-->
+</head>
+<body id="page1">
+<div class="body1"></div>
+<div class="body2">
+	<div class="main">
+<!--header -->
+		<header>
+            <div id="language"><asp:HyperLink ID="languageLink" Text="English" runat="server" CssClass="englishLink" NavigateUrl="/en/Default.aspx"></asp:HyperLink></div>
+			<div class="wrapper">
+				<nav>
+					<ul id="menu">
+						<li class="menu_active"><a href="Default.aspx">Ana Sayfa</a></li>
+						<li><a href="What.aspx">Crexta Nedir?</a></li>
+						<li><a href="How.aspx">Nasıl Çalışır?</a></li>
+						<li><a href="Screenshots.aspx">Ekran Görüntüleri</a></li>
+                        <li><a href="Api.aspx">API</a></li>
+						<li><a href="Contact.aspx">İletişim</a></li>
+					</ul>
+				</nav>
+				<h1><a href="Default.aspx" id="logo">Crexta - Crawl and Extract Data</a></h1>
+			</div>
+			<div class="wrapper">
+				<article class="col1 pad_left2">
+					<div class="text1">Veri toplamak hiç bu<span>kadar kolay olmamıştı!</span></div>
+					<p>Crexta, Internet üzerinde düzensiz, karmaşık ve dağıtık olarak yer alan bilgilerin kolayca ve zahmetsizce tek bir merkezde toplanmasına olanak tanıyan bir "web veri toplama alt yapısıdır"*. <a href="/What.aspx" class="link1">Devamını Oku</a><br /><br />* Web data extraction framework</p>
+				</article>
+			</div>
+		</header>
+	</div>
+</div>
+<!--header end-->
+<!--content -->
+<div class="body3">
+	<div class="main">
+		<section id="content_top">
+			<article class="col1 pad_left2">
+				<ul class="list1">
+					<li>
+						<span class="box1">1</span>
+						Crexta adı, "<strong>Cr</strong>awl and <strong>Ex</strong>tract Da<strong>ta</strong>" sloganı içerisinde yer alan kelimeler kullanılarak oluşturulmuştur. Bu slogan Crexta'nın işlevini en iyi şekilde ifade eder.
+					</li>
+					<li>
+						<span class="box1">2</span>
+						Crexta veri toplama işlemini, web sitelerine özel olarak tanımlanan "<strong>Crextor</strong>" adı verilen kurallar kümesini kullanarak başarır. Herbir Crextor için birden fazla kural tanımlanabilir."
+					</li>
+				</ul>
+			</article>
+		</section>
+	</div>
+</div>
+<div class="main">
+	<section id="content">
+		<div class="wrapper">
+			<article class="col3">
+				<h3>Kimler kullanmalı?</h3>
+				<div class="pad">
+					<p class="pad_bot2"><strong>Crexta alt yapısı aşağıda belirtilen kişi ya da kurumlar için mükemmel çözümler sunar. </strong></p>
+					<ul class="list2 pad_bot1">
+                        <li>Kurumlar</li>
+                        <li>Yazılım Geliştiriciler</li>
+                        <li>Yazılım Şirketleri</li>
+                        <li>Araştırma Şirketleri</li>
+                        <li>Reklam Ajansları</li>
+                        <li>PR Ajansları</li>
+                        <li>Dijital Ajanslar</li>
+                        <li>Ve daha fazlası...</li>
+					</ul>
+				</div>
+			</article>
+			<article class="col3 pad_left1">
+				<h3>Ne tür bilgi?</h3>
+				<div class="pad">
+					<ul class="list2 pad_bot1">
+                        <li>Finansal veriler</li>
+                        <li>Emlak verileri</li>
+                        <li>Ürün verileri</li>
+                        <li>Sosyal medya takibi</li>
+                        <li>Dinamik web içerikleri</li>
+                        <li>Haberler</li>
+                        <li>Kampanyalar</li>
+                        <li>Açık arttırma bilgileri</li>
+                        <li>İş ilanları</li>
+                        <li>Web üzerinde yer alan her tür bilgi</li>
+					</ul>
+				</div>
+			</article>
+			<article class="col3 pad_left1">
+				<h3>Nedir, nasıl çalışır?</h3>
+				<div class="pad">
+					<p>Crexta, internet üzerinde yer alan web sitelerindeki içerikleri, istenilen formatta, istenilen zamanda, hızlı ve verimli bir şekilde toplamayı sağlayan bir alt yapıdır.
+                    <br /><br />
+                    Crexta, gücünü dağıtık ve esnek çalışma mimarisinden alır. Crexta alt yapısını oluşturan temel uygulamalar (Crexta Explorer, Crexta Server, Crexta Client), teorik olarak sınırsız sayıda ve aynı anda kullanılabilir. Bu da Crexta alt yapısına inanılmaz bir hız ve esnek bir yapı kazandırır.</p>
+				</div>
+			</article>
+		</div>
+		<div class="wrapper">
+			<article class="col3">
+				<div class="pad"><a href="What.aspx" class="link1">Devamını oku</a></div>
+			</article>
+			<article class="col3 pad_left1">
+				<div class="pad"><a href="How.aspx" class="link1">Devamını oku</a></div>
+			</article>
+			<article class="col3 pad_left1">
+				<div class="pad"><a href="/How.aspx" target="_blank" class="link1">Devamını oku</a></div>
+			</article>
+		</div>
+	</section>
+</div>
+<!--content end-->
+<!--footer -->
+<div class="body5">
+	<div class="main">
+		<footer>
+            <asp:Label ID="copyrightLabel" runat="server" CssClass="versionLabel"></asp:Label>
+		</footer>
+	</div>
+</div>
+<!--footer end-->
+<script type="text/javascript">Cufon.now(); </script>
+</body>
+</html>

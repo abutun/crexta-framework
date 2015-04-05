@@ -1,0 +1,441 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1D5A740D-45B0-4EC1-AD4F-346DA50F2BBE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Crexta.Live</RootNamespace>
+    <AssemblyName>Crexta.Live</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Lucene.Net, Version=2.4.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Repository\Lucene.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Api.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="css\layout.css" />
+    <Content Include="css\reset.css" />
+    <Content Include="css\style.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="en\Api.aspx" />
+    <Content Include="en\Contact.aspx" />
+    <Content Include="en\Default.aspx" />
+    <Content Include="en\How.aspx" />
+    <Content Include="en\Screenshots.aspx" />
+    <Content Include="en\What.aspx" />
+    <Content Include="googlea4661a54fadfd09e.html" />
+    <Content Include="How.aspx" />
+    <Content Include="images\bg_img1.png" />
+    <Content Include="images\bg_img2.png" />
+    <Content Include="images\bot.jpg" />
+    <Content Include="images\box1.jpg" />
+    <Content Include="images\box2.jpg" />
+    <Content Include="images\crexta_framework.jpg" />
+    <Content Include="images\crexta_framework_900.jpg" />
+    <Content Include="images\crexta_xml_output_big_en.jpg" />
+    <Content Include="images\crexta_xml_output_big_en.png" />
+    <Content Include="images\crexta_xml_output_big_tr.jpg" />
+    <Content Include="images\crexta_xml_output_big_tr.png" />
+    <Content Include="images\crexta_xml_output_small_en.jpg" />
+    <Content Include="images\crexta_xml_output_small_en.png" />
+    <Content Include="images\crexta_xml_output_small_tr.jpg" />
+    <Content Include="images\crexta_xml_output_small_tr.png" />
+    <Content Include="images\crextors\logo\103_x25.jpg" />
+    <Content Include="images\crextors\logo\103_x75.jpg" />
+    <Content Include="images\crextors\logo\105_x25.jpg" />
+    <Content Include="images\crextors\logo\105_x75.jpg" />
+    <Content Include="images\crextors\logo\106_x25.jpg" />
+    <Content Include="images\crextors\logo\106_x75.jpg" />
+    <Content Include="images\crextors\logo\107_x25.jpg" />
+    <Content Include="images\crextors\logo\107_x75.jpg" />
+    <Content Include="images\crextors\logo\108_x25.jpg" />
+    <Content Include="images\crextors\logo\108_x75.jpg" />
+    <Content Include="images\crextors\logo\109_x25.jpg" />
+    <Content Include="images\crextors\logo\109_x75.jpg" />
+    <Content Include="images\crextors\logo\10_x25.jpg" />
+    <Content Include="images\crextors\logo\10_x75.jpg" />
+    <Content Include="images\crextors\logo\110_x25.jpg" />
+    <Content Include="images\crextors\logo\110_x75.jpg" />
+    <Content Include="images\crextors\logo\114_x25.jpg" />
+    <Content Include="images\crextors\logo\114_x75.jpg" />
+    <Content Include="images\crextors\logo\11_x25.jpg" />
+    <Content Include="images\crextors\logo\11_x75.jpg" />
+    <Content Include="images\crextors\logo\12_x25.jpg" />
+    <Content Include="images\crextors\logo\12_x75.jpg" />
+    <Content Include="images\crextors\logo\13_x25.jpg" />
+    <Content Include="images\crextors\logo\13_x75.jpg" />
+    <Content Include="images\crextors\logo\15_x25.jpg" />
+    <Content Include="images\crextors\logo\15_x75.jpg" />
+    <Content Include="images\crextors\logo\1_x25.jpg" />
+    <Content Include="images\crextors\logo\1_x75.jpg" />
+    <Content Include="images\crextors\logo\20_x25.jpg" />
+    <Content Include="images\crextors\logo\20_x75.jpg" />
+    <Content Include="images\crextors\logo\25_x25.jpg" />
+    <Content Include="images\crextors\logo\25_x75.jpg" />
+    <Content Include="images\crextors\logo\26_x25.jpg" />
+    <Content Include="images\crextors\logo\26_x75.jpg" />
+    <Content Include="images\crextors\logo\2_x25.jpg" />
+    <Content Include="images\crextors\logo\2_x75.jpg" />
+    <Content Include="images\crextors\logo\34_x25.jpg" />
+    <Content Include="images\crextors\logo\34_x75.jpg" />
+    <Content Include="images\crextors\logo\4_x25.JPG" />
+    <Content Include="images\crextors\logo\4_x75.JPG" />
+    <Content Include="images\crextors\logo\54_x25.jpg" />
+    <Content Include="images\crextors\logo\54_x75.jpg" />
+    <Content Include="images\crextors\logo\55_x25.jpg" />
+    <Content Include="images\crextors\logo\55_x75.jpg" />
+    <Content Include="images\crextors\logo\56_x25.jpg" />
+    <Content Include="images\crextors\logo\56_x75.gif" />
+    <Content Include="images\crextors\logo\56_x75.jpg" />
+    <Content Include="images\crextors\logo\57_x25.jpg" />
+    <Content Include="images\crextors\logo\57_x75.jpg" />
+    <Content Include="images\crextors\logo\58_x25.jpg" />
+    <Content Include="images\crextors\logo\58_x75.jpg" />
+    <Content Include="images\crextors\logo\59_x25.jpg" />
+    <Content Include="images\crextors\logo\59_x75.jpg" />
+    <Content Include="images\crextors\logo\5_x25.jpg" />
+    <Content Include="images\crextors\logo\5_x75.jpg" />
+    <Content Include="images\crextors\logo\61_x25.jpg" />
+    <Content Include="images\crextors\logo\61_x75.jpg" />
+    <Content Include="images\crextors\logo\62_x25.jpg" />
+    <Content Include="images\crextors\logo\62_x75.jpg" />
+    <Content Include="images\crextors\logo\66_x25.jpg" />
+    <Content Include="images\crextors\logo\66_x75.jpg" />
+    <Content Include="images\crextors\logo\69_x25.jpg" />
+    <Content Include="images\crextors\logo\69_x75.jpg" />
+    <Content Include="images\crextors\logo\6_x25.jpg" />
+    <Content Include="images\crextors\logo\6_x75.jpg" />
+    <Content Include="images\crextors\logo\70_x25.jpg" />
+    <Content Include="images\crextors\logo\70_x75.jpg" />
+    <Content Include="images\crextors\logo\71_x25.jpg" />
+    <Content Include="images\crextors\logo\71_x75.jpg" />
+    <Content Include="images\crextors\logo\72_x25.jpg" />
+    <Content Include="images\crextors\logo\72_x75.jpg" />
+    <Content Include="images\crextors\logo\73_x25.jpg" />
+    <Content Include="images\crextors\logo\73_x75.jpg" />
+    <Content Include="images\crextors\logo\74_x25.jpg" />
+    <Content Include="images\crextors\logo\74_x75.jpg" />
+    <Content Include="images\crextors\logo\75_x25.jpg" />
+    <Content Include="images\crextors\logo\75_x75.jpg" />
+    <Content Include="images\crextors\logo\78_x25.jpg" />
+    <Content Include="images\crextors\logo\78_x75.jpg" />
+    <Content Include="images\crextors\logo\79_x25.jpg" />
+    <Content Include="images\crextors\logo\79_x75.jpg" />
+    <Content Include="images\crextors\logo\7_x25.jpg" />
+    <Content Include="images\crextors\logo\7_x75.jpg" />
+    <Content Include="images\crextors\logo\82_x25.jpg" />
+    <Content Include="images\crextors\logo\82_x75.jpg" />
+    <Content Include="images\crextors\logo\85_x25.jpg" />
+    <Content Include="images\crextors\logo\85_x75.jpg" />
+    <Content Include="images\crextors\logo\86_x25.jpg" />
+    <Content Include="images\crextors\logo\86_x75.jpg" />
+    <Content Include="images\crextors\logo\8_x25.jpg" />
+    <Content Include="images\crextors\logo\8_x75.jpg" />
+    <Content Include="images\crextors\logo\94_x25.jpg" />
+    <Content Include="images\crextors\logo\94_x75.jpg" />
+    <Content Include="images\crextors\logo\9_x25.jpg" />
+    <Content Include="images\crextors\logo\9_x75.jpg" />
+    <Content Include="images\favicon.ico" />
+    <Content Include="images\flags\turkey.png" />
+    <Content Include="images\flags\usa.png" />
+    <Content Include="images\footer_line.gif" />
+    <Content Include="images\line_hor1.jpg" />
+    <Content Include="images\line_hor2.jpg" />
+    <Content Include="images\line_ver1.gif" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\marker_1.gif" />
+    <Content Include="images\marker_2.jpg" />
+    <Content Include="images\marker_3.gif" />
+    <Content Include="images\menu_bg.gif" />
+    <Content Include="images\menu_line.png" />
+    <Content Include="images\page1_img1.jpg" />
+    <Content Include="images\page1_img2.jpg" />
+    <Content Include="images\page2_img1.jpg" />
+    <Content Include="images\page2_img2.jpg" />
+    <Content Include="images\page2_img3.jpg" />
+    <Content Include="images\page3_img1.jpg" />
+    <Content Include="images\page3_img2.jpg" />
+    <Content Include="images\page3_img3.jpg" />
+    <Content Include="images\page4_img1.jpg" />
+    <Content Include="images\page4_img2.jpg" />
+    <Content Include="images\page4_img3.jpg" />
+    <Content Include="images\page4_img4.jpg" />
+    <Content Include="images\page4_img5.jpg" />
+    <Content Include="images\screenshots\client_dataextractor.jpg" />
+    <Content Include="images\screenshots\client_settings.jpg" />
+    <Content Include="images\screenshots\client_urlfinder.jpg" />
+    <Content Include="images\screenshots\explorer_1_big.jpg" />
+    <Content Include="images\screenshots\explorer_1_small.jpg" />
+    <Content Include="images\screenshots\explorer_criteria_big.jpg" />
+    <Content Include="images\screenshots\explorer_criteria_small.jpg" />
+    <Content Include="images\screenshots\explorer_rule_big.jpg" />
+    <Content Include="images\screenshots\explorer_rule_small.jpg" />
+    <Content Include="images\screenshots\explorer_rule_tester_big.jpg" />
+    <Content Include="images\screenshots\explorer_rule_tester_small.jpg" />
+    <Content Include="images\screenshots\server.jpg" />
+    <Content Include="images\screenshots\server_settings.jpg" />
+    <Content Include="images\top.jpg" />
+    <Content Include="js\cufon-replace.js" />
+    <Content Include="js\cufon-yui.js" />
+    <Content Include="js\html5.js" />
+    <Content Include="js\jquery-1.4.2.js" />
+    <Content Include="js\Myriad_Pro_300.font.js" />
+    <Content Include="js\Myriad_Pro_400.font.js" />
+    <Content Include="js\PIE.htc" />
+    <Content Include="Screenshots.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="What.aspx" />
+    <Content Include="ws\Api.asmx" />
+    <Content Include="ws\CrextaWS.asmx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api.aspx.cs">
+      <DependentUpon>Api.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Api.aspx.designer.cs">
+      <DependentUpon>Api.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\Api.aspx.cs">
+      <DependentUpon>Api.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\Api.aspx.designer.cs">
+      <DependentUpon>Api.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\How.aspx.cs">
+      <DependentUpon>How.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\How.aspx.designer.cs">
+      <DependentUpon>How.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\Inner_en.Master.cs">
+      <DependentUpon>Inner_en.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\Inner_en.Master.designer.cs">
+      <DependentUpon>Inner_en.Master</DependentUpon>
+    </Compile>
+    <Compile Include="en\Main_en.Master.cs">
+      <DependentUpon>Main_en.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\Main_en.Master.designer.cs">
+      <DependentUpon>Main_en.Master</DependentUpon>
+    </Compile>
+    <Compile Include="en\Screenshots.aspx.cs">
+      <DependentUpon>Screenshots.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\Screenshots.aspx.designer.cs">
+      <DependentUpon>Screenshots.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\What.aspx.cs">
+      <DependentUpon>What.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\What.aspx.designer.cs">
+      <DependentUpon>What.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="How.aspx.cs">
+      <DependentUpon>How.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="How.aspx.designer.cs">
+      <DependentUpon>How.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inner.Master.cs">
+      <DependentUpon>Inner.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inner.Master.designer.cs">
+      <DependentUpon>Inner.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Main.Master.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main.Master.designer.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Screenshots.aspx.cs">
+      <DependentUpon>Screenshots.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Screenshots.aspx.designer.cs">
+      <DependentUpon>Screenshots.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="What.aspx.cs">
+      <DependentUpon>What.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="What.aspx.designer.cs">
+      <DependentUpon>What.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ws\Api.asmx.cs">
+      <DependentUpon>Api.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ws\CrextaWS.asmx.cs">
+      <DependentUpon>CrextaWS.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="download\client\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Crexta.Common\Crexta.Common.csproj">
+      <Project>{7191A5BC-A981-4ACE-8A1E-F1C43B417E72}</Project>
+      <Name>Crexta.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Crexta.DataBase\Crexta.Database.csproj">
+      <Project>{416D5C26-790A-4E14-B3B9-40DD747684AC}</Project>
+      <Name>Crexta.Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Crexta.Utilities\Crexta.Utilities.csproj">
+      <Project>{B98EFBA4-1C32-4B2F-9C03-C0208876B63F}</Project>
+      <Name>Crexta.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Main.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Inner.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="en\Main_en.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="en\Inner_en.Master" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>2429</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

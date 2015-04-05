@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7191A5BC-A981-4ACE-8A1E-F1C43B417E72}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Crexta.Common</RootNamespace>
+    <AssemblyName>Crexta.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>http://localhost/Kaddet.Common/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\Dependencies\NCrawler\Net 4.0\Repository\HtmlAgilityPack\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Repository\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cache\Cache.cs" />
+    <Compile Include="ClientInfo\ClientInfo.cs" />
+    <Compile Include="Common.cs" />
+    <Compile Include="Constants\ClientConstants.cs" />
+    <Compile Include="Constants\Constants.cs" />
+    <Compile Include="Constants\DataExtractorConstants.cs" />
+    <Compile Include="Constants\ServerConstants.cs" />
+    <Compile Include="Constants\URLFinderConstants.cs" />
+    <Compile Include="CrawlerRule\CrawlerRule.cs" />
+    <Compile Include="CrawlerRule\CrawlerRuleCollection.cs" />
+    <Compile Include="Crawler\CrawlerCriteria.cs" />
+    <Compile Include="Crawler\CrawlerCriteriaCollection.cs" />
+    <Compile Include="Crawler\CrawlerCriteriaDBInfo.cs" />
+    <Compile Include="Crawler\CrawlerCriteriaItemCollection.cs" />
+    <Compile Include="Crawler\CrawlerCriteriaItemResult.cs" />
+    <Compile Include="Crawler\CrawlerExcludeList.cs" />
+    <Compile Include="Crawler\CrawlerExcludeListCollection.cs" />
+    <Compile Include="Crawler\CrawlerRuleBase.cs" />
+    <Compile Include="Crawler\CrawlerRuleBaseCollection.cs" />
+    <Compile Include="Crawler\CriteriaItems\BasicHTMLItem.cs" />
+    <Compile Include="Crawler\CriteriaItems\ClickItem.cs" />
+    <Compile Include="Crawler\CriteriaItems\HTMLNodeCollectionItem.cs" />
+    <Compile Include="Crawler\CriteriaItems\HTMLNodeItem.cs" />
+    <Compile Include="Crawler\CriteriaItems\RegularExpressionItem.cs" />
+    <Compile Include="Crawler\Digger.cs" />
+    <Compile Include="Crawler\Enums\BrowserType.cs" />
+    <Compile Include="Crawler\Enums\ClickItemType.cs" />
+    <Compile Include="Crawler\Enums\CrawlerCriteriaType.cs" />
+    <Compile Include="Crawler\Enums\CrawlerExcludeListType.cs" />
+    <Compile Include="Crawler\Interfaces\ICrawlerCriteria.cs" />
+    <Compile Include="Crawler\Interfaces\ICrawlerCriteriaItem.cs" />
+    <Compile Include="Enums\Enums.cs" />
+    <Compile Include="IndexHash\IndexHash.cs" />
+    <Compile Include="Logging\Logger.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registry\Registry.cs" />
+    <Compile Include="ScheduleInfo\ScheduleInfo.cs" />
+    <Compile Include="Serializer\Serializer.cs" />
+    <Compile Include="ServerInfo\ServerInfo.cs" />
+    <Compile Include="Settings\SettingsBase.cs" />
+    <Compile Include="CrextorInfo\CrextorInfo.cs" />
+    <Compile Include="UrlInfo\CustomUrlInfo.cs" />
+    <Compile Include="UrlInfo\ClientUrlInfo.cs" />
+    <Compile Include="UrlInfo\ResourceUrlInfo.cs" />
+    <Compile Include="UrlInfo\QueueUrlInfo.cs" />
+    <Compile Include="XML\CrextaXML.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Crexta.Utilities\Crexta.Utilities.csproj">
+      <Project>{B98EFBA4-1C32-4B2F-9C03-C0208876B63F}</Project>
+      <Name>Crexta.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dependencies\WatiN\source\src\Core\Core.csproj">
+      <Project>{217E2D34-F6DF-431B-AC5A-B368F481A530}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

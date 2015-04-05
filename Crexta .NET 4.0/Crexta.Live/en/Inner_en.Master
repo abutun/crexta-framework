@@ -1,0 +1,101 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Inner_en.master.cs" Inherits="Crexta.Live.en.Inner_en" %>
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<title>Crexta - Crawl and Extract Data</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="/css/reset.css" type="text/css" media="all" />
+<link rel="stylesheet" href="/css/layout.css" type="text/css" media="all" />
+<link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+<link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" /> 
+<script type="text/javascript" src="/js/jquery-1.4.2.js"></script>
+<script type="text/javascript" src="/js/cufon-yui.js"></script>
+<script type="text/javascript" src="/js/cufon-replace.js"></script> 
+<script type="text/javascript" src="/js/Myriad_Pro_300.font.js"></script>
+<script type="text/javascript" src="/js/Myriad_Pro_400.font.js"></script>
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1306358-22']);
+    _gaq.push(['_setDomainName', 'crexta.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+<!--[if lt IE 9]>
+	<script type="text/javascript" src="http://info.template-help.com/files/ie6_warning/ie6_script_other.js"></script>
+	<script type="text/javascript" src="js/html5.js"></script>
+<![endif]-->
+<!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {
+       filter: none;
+    }
+  </style>
+<![endif]-->
+</head>
+<body id="page3">
+<div class="body1"></div>
+<div class="body2">
+	<div class="main">
+<!--header -->
+		<header>
+            <div id="language"><asp:HyperLink ID="languageLink" Text="Türkçe" runat="server" CssClass="turkishLink"></asp:HyperLink></div>
+			<div class="wrapper">
+				<nav>
+					<ul id="menu">
+						<li><a href="Default.aspx">Home</a></li>
+						<li runat="server" id="topLinkWhat"><a href="What.aspx">What is Crexta?</a></li>
+						<li runat="server" id="topLinkHow"><a href="How.aspx">How it Works?</a></li>
+                        <li runat="server" id="topLinkScreenshots"><a href="Screenshots.aspx">Screenshots</a></li>
+                        <li runat="server" id="topLinkApi"><a href="Api.aspx">API</a></li>
+						<li runat="server" id="topLinkContact"><a href="Contact.aspx">Contact</a></li>
+					</ul>
+				</nav>
+				<h1><a href="Default.aspx" id="logo" style="margin-top:56px;">Crexta - Crawl and Extract Data</a></h1>
+			</div>
+			<div class="wrapper">
+				<article class="col1 pad_left2">
+					<div class="text1">Do not get lost in the<span>growing ocean of information!</span></div>
+					<p>It is possible to access any kind of information easily by using Crexta framework. Crexta delivers information instantly through many channels that are accessable only by you or your company. <a href="How.aspx" class="link1">Read more</a> </p>
+				</article>
+			</div>
+		</header>
+	</div>
+</div>
+<!--header end-->
+<!--content -->
+<div class="body3">
+	<div class="main">
+		<section id="content_top">
+			<asp:ContentPlaceHolder ID="innerTopContentPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+		</section>
+	</div>
+</div>
+<div class="main">
+	<section id="content">
+		<div class="wrapper">
+            <asp:ContentPlaceHolder runat="server" ID="innerMainContentPlaceHolder"></asp:ContentPlaceHolder>
+		</div>
+	</section>
+</div>
+<!--content end-->
+<!--footer -->
+<div class="body5">
+	<div class="main">
+		<footer>
+            <asp:Label ID="copyrightLabel" runat="server" CssClass="versionLabel"></asp:Label>
+		</footer>
+	</div>
+</div>
+<!--footer end-->
+<script type="text/javascript">    Cufon.now(); </script>
+</body>
+</html>

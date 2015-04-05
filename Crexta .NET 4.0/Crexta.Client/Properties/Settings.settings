@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Crexta.Client.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Client_com_crexta_www_CrextaWS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://www.crexta.com/ws/CrextaWS.asmx</Value>
+    </Setting>
+    <Setting Name="Client_localhost_CrextaWS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/ws/CrextaWS.asmx</Value>
+    </Setting>
+    <Setting Name="Crexta_Client_localhost_CrextaWS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/ws/crextaws.asmx</Value>
+    </Setting>
+    <Setting Name="Crexta_Client_com_crexta_www_CrextaWS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://www.crexta.com/ws/crextaws.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

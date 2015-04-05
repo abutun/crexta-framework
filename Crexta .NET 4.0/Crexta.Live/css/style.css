@@ -1,0 +1,116 @@
+/* Getting the new tags to behave */
+article, aside, audio, canvas, command, datalist, details, embed, figcaption, figure, footer, header, hgroup, keygen, meter, nav, output, progress, section, source, video {display:block}
+mark, rp, rt, ruby, summary, time {display:inline}
+/* Left & Right alignment */
+.left {float:left}
+.right {float:right}
+.wrapper {width:100%;overflow:hidden}
+.inner_copy, .inner_copy a {border:0;float:right;background:#fff;color:#f00;width:50%;line-height:10px;font-size:10px;margin:-220% 0 0 0;overflow:hidden;padding:0}
+body {background:#fff;border:0;font:13px Arial, Helvetica, sans-serif;color:#4e4e4e;line-height:20px}
+/* Global Structure */
+.body1 {background:url(../images/bg_img2.png) top center no-repeat;height:680px;position:absolute;width:100%;z-index:1}
+/*.body2 {background:url(../images/top.jpg) top center no-repeat #2d213c}*/
+.body2
+{
+background: #e24b18; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2UyNGIxOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2ZmYTNhMyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmOTFkMDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZTI0YjE4IiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+background: -moz-linear-gradient(left,  #e24b18 0%, #ffa3a3 50%, #f91d00 100%, #e24b18 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,#e24b18), color-stop(50%,#ffa3a3), color-stop(100%,#f91d00), color-stop(100%,#e24b18)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left,  #e24b18 0%,#ffa3a3 50%,#f91d00 100%,#e24b18 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left,  #e24b18 0%,#ffa3a3 50%,#f91d00 100%,#e24b18 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left,  #e24b18 0%,#ffa3a3 50%,#f91d00 100%,#e24b18 100%); /* IE10+ */
+background: linear-gradient(left,  #e24b18 0%,#ffa3a3 50%,#f91d00 100%,#e24b18 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e24b18', endColorstr='#e24b18',GradientType=1 ); /* IE6-8 */
+}
+.body3 {background:url(../images/line_hor1.jpg) bottom repeat-x #f5f5f5;border-top:1px solid #fff}
+.body4 {background:url(../images/line_hor2.jpg) top repeat-x #f5f5f5}
+.body5 
+{
+background: #9dc7f9; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzlkYzdmOSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijk3JSIgc3RvcC1jb2xvcj0iIzAxMzc5YiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+background: -moz-linear-gradient(top,  #9dc7f9 0%, #01379b 97%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#9dc7f9), color-stop(97%,#01379b)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #9dc7f9 0%,#01379b 97%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #9dc7f9 0%,#01379b 97%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #9dc7f9 0%,#01379b 97%); /* IE10+ */
+background: linear-gradient(top,  #9dc7f9 0%,#01379b 97%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9dc7f9', endColorstr='#01379b',GradientType=0); /* IE6-8 */
+    }
+.main {	margin:0 auto;	width:900px;position:relative;z-index:2}
+/* main layout */
+a {text-decoration:underline;outline:none}
+a:hover {text-decoration:none}
+h1 {padding:21px 0 0 20px}
+h2 {font-size:28px;font-weight:bold;font-weight:300;color:#4e4e4e;padding:29px 0 27px 0;line-height:38px}
+h2 span {display:block;margin-top:-10px}
+h3 {background:url(../images/box2.jpg) no-repeat;font-size:24px;padding:0 20px;margin:17px 0 20px 0;color:#fff;line-height:51px;font-weight:300}
+p {padding-bottom:20px}
+/* header */
+header {width:100%;overflow:hidden;padding-bottom:22px}
+#logo {display:block;background:url(../images/logo.png) no-repeat;width:321px;height:70px;text-indent:-5000px}
+#menu {float:right;padding-top:30px;padding-bottom:5px}
+#menu li {float:left;padding-right:9px;background:url(../images/menu_line.png) right 6px no-repeat;margin-right:8px}
+#menu .bg_none {background:none;padding:0;margin:0}
+#menu li a {display:block;font-size:16px;font-weight:400;color:#2c539e;line-height:31px;padding:0 9px;text-decoration:none;position:relative;behavior:url(js/PIE.htc)}
+#menu li a:hover, #menu .menu_active a {background:url(../images/menu_bg.gif) top repeat-x #b3b3b3;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;box-shadow:3px 3px 5px #402f55;-moz-box-shadow:3px 3px 5px #402f55;-webkit-box-shadow:3px 3px 5px #402f55;color:#673f85;}
+.text1 {font-size:30px;font-weight:300;color:#fff;line-height:39px;padding:24px 0 15px 0}
+.text1 span {display:block;margin-top:-10px}
+header p {color:#000;padding-bottom:17px}
+header .link1 {text-decoration:none}
+header .link1:hover {text-decoration:underline}
+/* content */
+#content_top {width:100%;overflow:hidden;padding-bottom:20px}
+#content {width:100%;overflow:hidden;padding-bottom:52px}
+.pad_left1 {padding-left:37px}
+.pad_left2 {padding-left:20px}
+.pad_bot1 {padding-bottom:20px}
+.pad_bot2 {padding-bottom:10px}
+.pad {padding:0 20px}
+.marg_right1 {margin-right:25px}
+.marg_top {margin-top:-15px}
+.link1 {cursor:pointer; padding-right:15px;display:inline-block;background:url(../images/marker_1.gif) right 7px no-repeat}
+.list1 {padding:38px 0 6px 0}
+.list1 li {line-height:19px;width:100%;overflow:hidden;margin-bottom:14px;background:url(../images/line_ver1.gif) 56px 0 repeat-y}
+.list1 .box1 {background:url(../images/box1.jpg) 0 0 no-repeat;float:left;font:20px "Trebuchet MS", Arial, Helvetica, sans-serif;color:#f2f2f2;font-weight:bold;line-height:41px;width:41px;text-align:center;margin-right:35px}
+.list2 {margin:-5px 0}
+.list2 li {line-height:30px;padding-left:28px;background:url(../images/marker_2.jpg) 0 5px no-repeat}
+.list2 li a {color:#4e4e4e}
+.list3 li {line-height:30px}
+.list3 li a {padding-left:10px;background:url(../images/marker_3.gif) 0 5px no-repeat}
+.arrow {display:inline-block;background:url(../images/marker_1.gif) 0 7px no-repeat;height:19px;width:6px;margin-left:6px}
+.color1 {color:#8e8e8e}
+/* footer */
+footer {color:#dfd2e7;text-align:center;padding:25px 0 0 0;height:67px}
+footer a {color:#dfd2e7}
+#footer_menu ul {width:100%;overflow:hidden;text-align:center}
+#footer_menu li {display:inline;padding-right:21px;background:url(../images/footer_line.gif) right center no-repeat;margin-right:20px;overflow:hidden;line-height:42px}
+#footer_menu .bg_none {background:none;padding:0;margin:0}
+#footer_menu li a {display:inline-block;color:#4e4e4e;padding:0 39px;line-height:42px}
+/* forms */
+#aspnetForm {margin-top:-15px;width:860px}
+#aspnetForm p {line-height:24px;padding-bottom:6px;width:104px;float:left}
+#aspnetForm a {margin-left:24px;margin-top:8px}
+#aspnetForm .input {float:left;width:307px;height:16px;border:1px solid #d5d5d5;background:#fff;padding:3px 6px;margin-bottom:6px;color:#4e4e4e;font:13px Arial, Helvetica, sans-serif}
+#aspnetForm textarea {overflow:auto;float:left;width:742px;height:350px;border:1px solid #d5d5d5;background:#fff;padding:3px 6px;margin-bottom:0;color:#4e4e4e;font:13px Arial, Helvetica, sans-serif}
+#language 
+{
+    left: 20px;
+    position: absolute;
+    top: 4px;
+}
+.englishLink
+{
+    background: url("../images/flags/usa.png") no-repeat scroll left -1px transparent;
+    cursor: pointer;
+    display: inline-block;
+    padding-left: 28px;
+}
+.turkishLink
+{
+    background: url("../images/flags/turkey.png") no-repeat scroll left -1px transparent;
+    cursor: pointer;
+    display: inline-block;
+    padding-left: 28px;
+}

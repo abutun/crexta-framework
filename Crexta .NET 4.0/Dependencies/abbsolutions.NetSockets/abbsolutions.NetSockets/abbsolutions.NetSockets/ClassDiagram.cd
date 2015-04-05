@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="abbSolutions.NetSockets.NetBaseClient&lt;T&gt;" Collapsed="true">
+    <Position X="8" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAIAAAAAQAAAAEAAIICAIAAAAAIACAAAAQAAAIA=</HashCode>
+      <FileName>Base\NetBaseClient.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="abbSolutions.NetSockets.NetBasePayloadStream&lt;T&gt;" Collapsed="true">
+    <Position X="1.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAEAAAAAAAAAAAAAAAAABAAAAAABAAAAAQAE=</HashCode>
+      <FileName>Base\NetBasePayloadStream.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="abbSolutions.NetSockets.NetBaseServer&lt;T&gt;" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACACAAAAAGCABAkAICAQEAAvKAAAACYCIAAQIQgEAYw=</HashCode>
+      <FileName>Base\NetBaseServer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="abbSolutions.NetSockets.NetBaseStream&lt;T&gt;" Collapsed="true">
+    <Position X="3" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAQABAACAAQAEAAEAAAAAAIAAIBCAgKAAAAQAAAIE=</HashCode>
+      <FileName>Base\NetBaseStream.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="abbSolutions.NetSockets.NetReceivedEventArgs&lt;T&gt;" Collapsed="true">
+    <Position X="12.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>NetEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="abbSolutions.NetSockets.NetConnectedEventArgs" Collapsed="true">
+    <Position X="3.5" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NetEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="abbSolutions.NetSockets.NetDisconnectedEventArgs" Collapsed="true">
+    <Position X="0.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NetEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="abbSolutions.NetSockets.NetStartedEventArgs" Collapsed="true">
+    <Position X="3.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NetEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="abbSolutions.NetSockets.NetStoppedEventArgs" Collapsed="true">
+    <Position X="0.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NetEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="abbSolutions.NetSockets.NetStreamEventArgs" Collapsed="true">
+    <Position X="8.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NetEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="abbSolutions.NetSockets.NetClientConnectedEventArgs" Collapsed="true">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NetEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="abbSolutions.NetSockets.NetClientDisconnectedEventArgs" Collapsed="true">
+    <Position X="0.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NetEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="abbSolutions.NetSockets.NetExceptionEventArgs" Collapsed="true">
+    <Position X="16.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>NetEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="abbSolutions.NetSockets.NetClientAcceptedEventArgs" Collapsed="true">
+    <Position X="8.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NetEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="abbSolutions.NetSockets.NetClientRejectedEventArgs" Collapsed="true">
+    <Position X="14.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NetEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="abbSolutions.NetSockets.NetUtility" Collapsed="true">
+    <Position X="14.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAEAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>NetUtility.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="abbSolutions.NetSockets.NetObject" Collapsed="true">
+    <Position X="18" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAgAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Object\NetObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="abbSolutions.NetSockets.NetObjectClient" Collapsed="true">
+    <Position X="8" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Object\NetObjectClient.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="abbSolutions.NetSockets.NetObjectServer" Collapsed="true">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Object\NetObjectServer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="abbSolutions.NetSockets.NetObjectStream" Collapsed="true">
+    <Position X="3" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Object\NetObjectStream.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="abbSolutions.NetSockets.NetPayloadClient" Collapsed="true">
+    <Position X="10.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Payload\NetPayloadClient.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="abbSolutions.NetSockets.NetPayloadServer" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Payload\NetPayloadServer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="abbSolutions.NetSockets.NetPayloadStream" Collapsed="true">
+    <Position X="0.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Payload\NetPayloadStream.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="abbSolutions.NetSockets.NetClient" Collapsed="true">
+    <Position X="5.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Simple\NetClient.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="abbSolutions.NetSockets.NetServer" Collapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Simple\NetServer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="abbSolutions.NetSockets.NetStream" Collapsed="true">
+    <Position X="5.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Simple\NetStream.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="abbSolutions.NetSockets.NetStoppedReason" Collapsed="true">
+    <Position X="14.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAABAIAAAAAA=</HashCode>
+      <FileName>NetEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="abbSolutions.NetSockets.NetRejectedReason" Collapsed="true">
+    <Position X="12.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>NetEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Delegate Name="abbSolutions.NetSockets.NetReceivedEventHandler&lt;T&gt;" Collapsed="true">
+    <Position X="18" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NetEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="abbSolutions.NetSockets.NetConnectedEventHandler" Collapsed="true">
+    <Position X="12.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NetEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="abbSolutions.NetSockets.NetDisconnectedEventHandler" Collapsed="true">
+    <Position X="14.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NetEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="abbSolutions.NetSockets.NetStartedEventHandler" Collapsed="true">
+    <Position X="12.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NetEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="abbSolutions.NetSockets.NetStoppedEventHandler" Collapsed="true">
+    <Position X="14.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NetEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="abbSolutions.NetSockets.NetStreamEventHandler" Collapsed="true">
+    <Position X="16.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NetEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="abbSolutions.NetSockets.NetClientConnectedEventHandler" Collapsed="true">
+    <Position X="14.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>NetEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="abbSolutions.NetSockets.NetClientDisconnectedEventHandler" Collapsed="true">
+    <Position X="16.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>NetEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="abbSolutions.NetSockets.NetExceptionEventHandler" Collapsed="true">
+    <Position X="16.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NetEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="abbSolutions.NetSockets.NetClientAcceptedEventHandler" Collapsed="true">
+    <Position X="12.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NetEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="abbSolutions.NetSockets.NetClientRejectedEventHandler" Collapsed="true">
+    <Position X="18" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>NetEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

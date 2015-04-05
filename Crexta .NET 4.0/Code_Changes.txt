@@ -1,0 +1,67 @@
+22.05.2009
+	- Settings'e "indexingFilePath" adýnda yeni bir ayar girildi. Bu alan dosya sistemi üzerinde indexlenecek veriler için kullanýlacak.
+	- Settings's "reflectPredictedCategoryID2DB" ve "reflectPredictedBrandID2DB" adlý iki yeni ayar girildi. Bunlar crawler tarafýndan tahmin edilen
+	  kategori ve markanýn veri tabanýna anýnda yansýtýlmasýný saðlayacak.
+	- Indexer adlý yeni bir form oluþturuldu. Bu uygulama verilerin indexlenmesini saðlayacak.
+
+23.05.2009
+	- URLFounder ve Product Crawler için birden fazla instance çalýþtýrabilmek ve log takibi yapabilmek için "Instance Name" adlý bir settings tanýmlandý.
+	- Veri tabanýndaki bilgilerin bir defada kaç tane alýnmasýný belirtmek için Settings'e "crawlerQueueTopSelect" adlý yeni bir ayar eklendi.
+
+
+		Settings
+			+ indexingFilePath
+			+ crawlerInstanceName
+			+ reflectPredictedCategoryID2DB
+			+ reflectPredictedBrandID2DB
+			+ crawlerQueueTopSelect
+
+	- ProductCrawler->Crawler olarak deðiþtirildi ({ProjectName}.Crawler)
+	- Crawler.URLFounder->URLFounder olarak deðiþtirildi ({ProjectName}.URLFounder)
+	- {ProjectName}.Crawler içerisinde bir form olarak hazýrlanan Indexer yeni bir proje olarak solution'a dahil edildi.
+	- {ProjectName}.Crawler ve {ProjectName}.URLFounder uygulamalarý için programýn açýlýþýnda Instance ID kontrolü eklendi.
+
+27.05.2009
+	- {ProjectName}.Indexer projeye dahil edildi.
+
+28.05.2009
+	- NetTiers Framework 2.3 versiyonu ile güncellendi.
+	- TurkCrawler rulefilepath->rulerootpath olarak deðiþtirildi. Bu deðiþiklik paralel çalýþacak bütün crawler larýn ortak bir yerden rule larý
+	  yönetmesini saðlayacak.
+
+19.06.2009
+	- Crawler'larýn bir siteyi farklý rule'lar ile tarayabilmesi için Rule'lardan oluþan bir Collection oluþturuldu. Bu listeler web siteleri ile 
+	  iliþkilendirildi.
+	- URLFounder ve Crawler RuleList (Collection) deðiþikliðine göre yeniden düzenlendi.
+
+20.06.2009
+	- CrawlerRuleList ve CrawlerRuleCollection arasýndaki karmaþýklýk giderildi. CrawlerRuleList projeden çýkartýldý.
+	- CrawlerRuleCollection sýnýfýna Backup ve Restore metotlarý eklendi.
+
+29.08.2009
+	- Kaddet.Live adlý web sitesi projeye dahil edildi. Bu kaddet.com web sitesi olacak. Þu aþamada indexer'ýn doðru çalýþýp çalýþmadýðýný kontrol etmek
+	  için projeye dahil edildi.
+  
+30.08.2009
+	- Kaddet.Common adlý proje solution'a dahil edildi. Bu kaddet ile ilgili ortak bilgilerin saklanacaðý ve tüm projeler tarafýndan kullanýlacak olan proje.
+	- Kaddet.NZemberekTests projesi solution'dan çýkartýldý.
+
+31.08.2009
+	- Lucene.NET entegrasyonu Kaddet.Indexer ve Kaddet.Live için gerçekleþtirildi.
+
+01.03.2011
+	- TurkCrawler - NCrawler olarak deðiþtirildi. Böylesi daha doðru, ne o öyle baþkasýnýn yazdýðý projeyi sahiplenmek!
+	- WatIN projesi eklendi.
+	- Projeye yardýmcý tüm open source projeler "Dependencies" adlý klasörde toplandý.
+
+30.05.2011
+	- Kaddet.Utilities projesi oluþturuldu ve Kaddet.Common.Utilities altýnda yer alan dosyalar buraya taþýndý.
+
+01.06.2011
+	- Kaddet->Crexta isim ve proje deðiþikliði yapýldý. Kodlarda gerekli düzenlemeler yapýldý.
+
+16.06.2011
+	- Crexta API oluþturuldu.
+	- Crextor Group tanýmlarý yapýldý ve bu tanýmlar API üzerine yansýtýldý.
+	- Artýk veri girip sistemi tümüyle çalýþtýrmaya hazýrýz :)
+	- 34 adet haber sitesi girildi, yaklaþýk 30-40 adet fýrsat sitesi de girilecek ve bu iki temel kategori altýnda testler yapýlacak.

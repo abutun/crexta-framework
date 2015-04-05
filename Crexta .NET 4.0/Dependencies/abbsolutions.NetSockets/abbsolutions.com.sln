@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "v 1.0", "abbsolutions.com\v 1.0\", "{FF62D30D-BD69-47A4-AFDC-6A59CCA987F7}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "Svn"
+		SccAuxPath = "Svn"
+		SccLocalPath = "Svn"
+		SccProvider = "SubversionScc"
+		TargetFramework = "3.5"
+		Debug.AspNetCompiler.VirtualPath = "/v 1.0"
+		Debug.AspNetCompiler.PhysicalPath = "abbsolutions.com\v 1.0\"
+		Debug.AspNetCompiler.TargetPath = "abbsolutions.com\PrecompiledWeb\v 1.0\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/v 1.0"
+		Release.AspNetCompiler.PhysicalPath = "abbsolutions.com\v 1.0\"
+		Release.AspNetCompiler.TargetPath = "abbsolutions.com\PrecompiledWeb\v 1.0\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "2817"
+		VWDVirtualPath = "/"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF62D30D-BD69-47A4-AFDC-6A59CCA987F7}.Debug|.NET.ActiveCfg = Debug|.NET
+		{FF62D30D-BD69-47A4-AFDC-6A59CCA987F7}.Debug|.NET.Build.0 = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://crexta.com/ws/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://crexta.com/ws/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://crexta.com/ws/">
+      <s:element name="GetExternalIPAddress">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetExternalIPAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetExternalIPAddressResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateClientSoftware">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="current" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateClientSoftwareResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateClientSoftwareResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddClientLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="uniqueHash" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="guid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mac" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="instance" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="exception" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddClientLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddClientLogResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServerInformation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="securitykey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServerInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetServerInformationResult" type="tns:ServerIpPort" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ServerIpPort">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" default="" name="ExternalIp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" default="" name="LocalIp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" default="-1" name="Port" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateMainList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="current" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateMainListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateMainListResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="ServerIpPort" nillable="true" type="tns:ServerIpPort" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetExternalIPAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:GetExternalIPAddress" />
+  </wsdl:message>
+  <wsdl:message name="GetExternalIPAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExternalIPAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateClientSoftwareSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateClientSoftware" />
+  </wsdl:message>
+  <wsdl:message name="UpdateClientSoftwareSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateClientSoftwareResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddClientLogSoapIn">
+    <wsdl:part name="parameters" element="tns:AddClientLog" />
+  </wsdl:message>
+  <wsdl:message name="AddClientLogSoapOut">
+    <wsdl:part name="parameters" element="tns:AddClientLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServerInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServerInformation" />
+  </wsdl:message>
+  <wsdl:message name="GetServerInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServerInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMainListSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateMainList" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMainListSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateMainListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetExternalIPAddressHttpGetIn" />
+  <wsdl:message name="GetExternalIPAddressHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateClientSoftwareHttpGetIn">
+    <wsdl:part name="current" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateClientSoftwareHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="AddClientLogHttpGetIn">
+    <wsdl:part name="uniqueHash" type="s:string" />
+    <wsdl:part name="guid" type="s:string" />
+    <wsdl:part name="mac" type="s:string" />
+    <wsdl:part name="instance" type="s:string" />
+    <wsdl:part name="message" type="s:string" />
+    <wsdl:part name="exception" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddClientLogHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetServerInformationHttpGetIn">
+    <wsdl:part name="securitykey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetServerInformationHttpGetOut">
+    <wsdl:part name="Body" element="tns:ServerIpPort" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMainListHttpGetIn">
+    <wsdl:part name="current" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMainListHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetExternalIPAddressHttpPostIn" />
+  <wsdl:message name="GetExternalIPAddressHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateClientSoftwareHttpPostIn">
+    <wsdl:part name="current" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateClientSoftwareHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="AddClientLogHttpPostIn">
+    <wsdl:part name="uniqueHash" type="s:string" />
+    <wsdl:part name="guid" type="s:string" />
+    <wsdl:part name="mac" type="s:string" />
+    <wsdl:part name="instance" type="s:string" />
+    <wsdl:part name="message" type="s:string" />
+    <wsdl:part name="exception" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddClientLogHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetServerInformationHttpPostIn">
+    <wsdl:part name="securitykey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetServerInformationHttpPostOut">
+    <wsdl:part name="Body" element="tns:ServerIpPort" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMainListHttpPostIn">
+    <wsdl:part name="current" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMainListHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:portType name="CrextaWSSoap">
+    <wsdl:operation name="GetExternalIPAddress">
+      <wsdl:input message="tns:GetExternalIPAddressSoapIn" />
+      <wsdl:output message="tns:GetExternalIPAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateClientSoftware">
+      <wsdl:input message="tns:UpdateClientSoftwareSoapIn" />
+      <wsdl:output message="tns:UpdateClientSoftwareSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddClientLog">
+      <wsdl:input message="tns:AddClientLogSoapIn" />
+      <wsdl:output message="tns:AddClientLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerInformation">
+      <wsdl:input message="tns:GetServerInformationSoapIn" />
+      <wsdl:output message="tns:GetServerInformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMainList">
+      <wsdl:input message="tns:UpdateMainListSoapIn" />
+      <wsdl:output message="tns:UpdateMainListSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="CrextaWSHttpGet">
+    <wsdl:operation name="GetExternalIPAddress">
+      <wsdl:input message="tns:GetExternalIPAddressHttpGetIn" />
+      <wsdl:output message="tns:GetExternalIPAddressHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateClientSoftware">
+      <wsdl:input message="tns:UpdateClientSoftwareHttpGetIn" />
+      <wsdl:output message="tns:UpdateClientSoftwareHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddClientLog">
+      <wsdl:input message="tns:AddClientLogHttpGetIn" />
+      <wsdl:output message="tns:AddClientLogHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerInformation">
+      <wsdl:input message="tns:GetServerInformationHttpGetIn" />
+      <wsdl:output message="tns:GetServerInformationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMainList">
+      <wsdl:input message="tns:UpdateMainListHttpGetIn" />
+      <wsdl:output message="tns:UpdateMainListHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="CrextaWSHttpPost">
+    <wsdl:operation name="GetExternalIPAddress">
+      <wsdl:input message="tns:GetExternalIPAddressHttpPostIn" />
+      <wsdl:output message="tns:GetExternalIPAddressHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateClientSoftware">
+      <wsdl:input message="tns:UpdateClientSoftwareHttpPostIn" />
+      <wsdl:output message="tns:UpdateClientSoftwareHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddClientLog">
+      <wsdl:input message="tns:AddClientLogHttpPostIn" />
+      <wsdl:output message="tns:AddClientLogHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerInformation">
+      <wsdl:input message="tns:GetServerInformationHttpPostIn" />
+      <wsdl:output message="tns:GetServerInformationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMainList">
+      <wsdl:input message="tns:UpdateMainListHttpPostIn" />
+      <wsdl:output message="tns:UpdateMainListHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CrextaWSSoap" type="tns:CrextaWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetExternalIPAddress">
+      <soap:operation soapAction="http://crexta.com/ws/GetExternalIPAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateClientSoftware">
+      <soap:operation soapAction="http://crexta.com/ws/UpdateClientSoftware" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddClientLog">
+      <soap:operation soapAction="http://crexta.com/ws/AddClientLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerInformation">
+      <soap:operation soapAction="http://crexta.com/ws/GetServerInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMainList">
+      <soap:operation soapAction="http://crexta.com/ws/UpdateMainList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CrextaWSSoap12" type="tns:CrextaWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetExternalIPAddress">
+      <soap12:operation soapAction="http://crexta.com/ws/GetExternalIPAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateClientSoftware">
+      <soap12:operation soapAction="http://crexta.com/ws/UpdateClientSoftware" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddClientLog">
+      <soap12:operation soapAction="http://crexta.com/ws/AddClientLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerInformation">
+      <soap12:operation soapAction="http://crexta.com/ws/GetServerInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMainList">
+      <soap12:operation soapAction="http://crexta.com/ws/UpdateMainList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CrextaWSHttpGet" type="tns:CrextaWSHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetExternalIPAddress">
+      <http:operation location="/GetExternalIPAddress" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateClientSoftware">
+      <http:operation location="/UpdateClientSoftware" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddClientLog">
+      <http:operation location="/AddClientLog" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerInformation">
+      <http:operation location="/GetServerInformation" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMainList">
+      <http:operation location="/UpdateMainList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CrextaWSHttpPost" type="tns:CrextaWSHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetExternalIPAddress">
+      <http:operation location="/GetExternalIPAddress" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateClientSoftware">
+      <http:operation location="/UpdateClientSoftware" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddClientLog">
+      <http:operation location="/AddClientLog" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerInformation">
+      <http:operation location="/GetServerInformation" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMainList">
+      <http:operation location="/UpdateMainList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CrextaWS">
+    <wsdl:port name="CrextaWSSoap" binding="tns:CrextaWSSoap">
+      <soap:address location="http://www.crexta.com/ws/crextaws.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CrextaWSSoap12" binding="tns:CrextaWSSoap12">
+      <soap12:address location="http://www.crexta.com/ws/crextaws.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CrextaWSHttpGet" binding="tns:CrextaWSHttpGet">
+      <http:address location="http://www.crexta.com/ws/crextaws.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CrextaWSHttpPost" binding="tns:CrextaWSHttpPost">
+      <http:address location="http://www.crexta.com/ws/crextaws.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

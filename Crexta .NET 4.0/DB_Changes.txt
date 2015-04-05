@@ -1,0 +1,233 @@
+22.05.2009
+	- TBL_PORDUCTS tablosu silindi, bu tabloya baðlý iliþkiler de silindi.
+	- TBL_BRANDS tablosuna flags(int) alaný eklendi.
+	- TBL_STOREPRODUCTS tablosuna catid, brandid, isindexed, lasindexdate adlý 4 adet yeni alan eklendi. Bu alanlar ürünün kategori, marka bilgilerini
+	  ve dosya sistemi üzerinde indexlenip indexlenmediðini, en son ne zaman indexlendiðini saklayacak.
+	- TBL_STOREPRODUCTS tablosundaki recommendedcatids ve recommendedbrandids alanlarýnýn boyutlarý 32 karaktere çýkartýldý.
+	- TBL_QUEUE tablosuna priority alaný eklendi. Bu alan kullanýlarak Crawlerlarýn ürünleri öncelik sýrasýna göre taramalarý saðlanacak.
+	- TBL_STORES tablosuna ispaid alaný eklendi. Bu alan ürünlerinin ilk sýralarda yer almasý için ödeme yapan sanal maðazalar için kullanýlacak.
+	- TBL_STOREPRODUCTS priority alaný eklendi. Bu alan kullanýlarak kullanýcýlara gösterilecek ürünler öncelik sýrasýn göre sýralanacaklar.
+
+		TBL_BRANDS
+			+ flags
+		
+		TBL_STORES
+			+ ispaid
+		
+		TBL_STOREPRODUCTS
+			+ catid
+			+ brandid
+			+ isindexed
+			+ lasindexdate
+			+ priority
+		
+		TBL_QUEUE
+			+ priority
+		
+
+23.05.2009		
+	- TBL_SEQUENCE tablosu oluþturuldu.
+	
+		TBL_SEQUENCE.type
+			+ 1 ->Crawler
+			+ 2 ->URL Founder
+			+ 3 ->Indexer
+
+	- TBL_LOG tablosu oluþturuldu.
+
+26.05.2009
+	- TBL_STORES tablosuna "iscrawled" adlý yeni bir alan eklendi.
+
+
+		TBL_STORES
+			+ iscrawled
+		
+27.05.2009
+	- TBL_LOG tablosuna type alaný eklendi
+	
+		TBL_LOG.type
+			+ 1 ->Crawler
+			+ 2 ->URL Founder
+			+ 3 ->Indexer
+			
+		TBL_LOG.action (if type in {1,2,3})
+			+ 1-> Sequence query
+			+ 2-> Sequence increment
+			+ 3-> Sequence decrement
+			+ 4-> Sequence reset
+		
+		
+28.05.2009
+	- TBL_STORES.totalitems güncellemesini yapacak olan job yazýldý.
+	- TBL_STORES tablosun skipurls adlý yeni bir alan eklendi. Bu alan URLFounder tarafýnda store'un daha hýzlý crawl edilmesi amacýyla kullanýlacak.
+
+		TBL_STORES
+			+ skipurls
+		
+	- TBL_STORES, TBL_CATEGORIES ve TBL_BRANDS tablolarýna "tags" adlý bir alan eklend. Bu alan ilgili ürünlerin maðaza, kategori ve marka bilgilerine
+	  göre de indexlenmesini saðlayacak.
+  
+		TBL_STORES
+			+ tags
+		
+		TBL_CATEGORIES
+			+ tags
+		
+		TBL_BRANDS
+			+ tags
+		
+		
+		
+17.06.2010
+	TBL_LOG ve TBL_SEQUENCE tablolarý yenilendi.
+
+		TBL_LOG.type
+			+ 1 ->Client
+				TBL_LOG.subtype
+					+ 1 ->URLFounder
+					+ 2 ->DataExtractor
+			+ 2 ->Server
+			+ 3 ->Indexer
+			
+		TBL_LOG.action (if type in {1,2})
+			+ 1-> Sequence query
+			+ 2-> Sequence increment
+			+ 3-> Sequence decrement
+			+ 4-> Sequence reset
+			+ 50 ->Client connected (xfield1 shows serverid)
+			+ 60 ->Client disconnected (xfield1 shows serverid)
+			+ 70 ->Server started
+			+ 80 ->Server stopped
+
+		TBL_SEQUENCE.type
+			+ 1 ->URLFounder
+			+ 2 ->DataExtractor
+			+ 3 ->Indexer
+		
+		
+19.06.2010
+
+	TBL_PARAMETERS tablosu eklendi.
+	
+		+ id
+		+ typeid
+			+ 1 -> Tipi (Arsa, konut, daire vs.)
+			+ 2 -> Durumu (Satýlýk, kiralýk, Sýfýr, Ýkinci El)
+			+ 3 -> Renk
+			+ 4 -> Benzin tipi
+			+ 5 -> Isýtma tipi
+			+ 6 -> Vites tipi
+		+ name
+		+ tags
+		
+		
+22.06.2010
+
+	TBL_RANKS tablosu eklendi.
+	
+		+ type
+			+ 1 -> Store
+			+ 2 -> Product
+			
+			
+14.10.2010
+
+	TBL_PARAMETERS tablosu silindi.
+	
+	TBL_PRODUCT tablosu düzenlendi (önceden araba ve ürün bilgileri birlikte tutuluyordu, öyle tasarlanmýþtý, þimdi yalnýzca ürün bilgisi tutuluyor)
+	
+	ilerde
+	
+	TBL_HOTELS
+	TBL_CARS
+	TBL_ESTATES
+	
+	þeklinde 3 farklý ürün tipi daha eklenecek.
+	
+	
+23.01.2011
+
+	- Daha anlaþýlýr bir veritabaný yapýsý için bütün tablolardan TBL_ öneki kaldýrýldý (TBL_ ne ki? zaten bir tablo bu!, ayrýca belirtmeye ne gerek var)
+	- NetTiers -> LINQ dönüþümü yapýldý.
+	- STORE_EXTENDED tablosu oluþturuldu, üye maðazalarýn ek bilgilerini tutmak ve ana üye maðaza tablosunun boyutunu küçültmek için.
+	- STORES tablosuna,
+		STORES
+		+ rulelist VARBINARY(MAX)
+	
+		adlý bir alan oluþturuldu. Bu alan üye maðaza kural bilgilerini FILE ve DB olarak iki seçenek altýnda kullanmamýza olanak verecek. Ýlerisi için
+		tamamen DB yapýsý kullanmasý gerektiðine karar verildi ancak geriye dönük olarak FILE seçeneði de kalsýn.
+	
+	- STORE_RESOURCES tablosu oluþturuldu. Bu tablo ile UF ve DE'lerin XML, RSS ve ATOM baðlantýlarýndan veri çekebilmeleri için üye maðazalarýn XML, RSS
+	  bilgileri tutulacak.
+  
+		STORE_RESOURCES
+			+ id
+			+ storeid
+			+ categoryid (XML verisi çekerken verilerin hangi kategoriye ait olduðu ön bilgisi)
+			+ typeid (XML, RSS, ATOM vs)
+			+ period (dk olarak, hangi aralýklarla veri çekilmesi gerektiði)
+		
+	- RESOURCE_TYPES tablosu oluþturuldu. Üye maðaza kaynaklarýnýn tipini gösterir.
+		
+		RESOURCE_TYPES
+			+ id	(RSS=1, ATOM=2, XML=3)
+			+ name
+			+ desc
+		
+	- RULES ve RULE_BACKUPS tablolarý oluþturuldu.
+
+		RULES
+			+ id
+			+ name
+			+ data
+			+ path
+			+ date
+
+01.06.2011
+
+	- Kaddet->Crexta isim ve proje deðiþikliði yapýldý. Veri tabanýnda gerekli düzenlemeler yapýldý.
+
+16.06.2011
+
+	- Veri tabaný içerisindeki BÜYÜK harle yazýlmýþ tablo isimleri küçük harf yapýldý (daha anlaþýlýr oluyor).
+	
+
+07.04.2012
+	
+	- Çoðul tablo isimleri tekil olarak yeniden düzenlendi.
+
+	m	AppLogs > AppLog
+	m	BrandKeywords > BrandKeyword
+	m	Brands > Brand
+	m	Categories > Category
+	m	CategoryKeywords > CategoryKeyword
+	m	Clients > Client
+	m	CrextorGroups > CrextorGroup
+	m	CrextorResources > CrextorResource
+	m	Crextors > Crextor
+	m	CrextorSchedules > CrextorSchedule
+	m	CrextorUrls > CrextorUrl
+	m	DbFields > DbField
+	m	Downloads > Download
+	m	Keywords > Keyword
+	m	Logs > Log
+	m	ResourceTypes > ResourceType
+	m	ResultAccesses > ResultAccess
+	m	Results > Result
+	m	RuleBackups > RuleBackup
+	m	Rules > Rules
+	m	Servers > Server
+	m	Versions > Version
+
+	m	Category.IsActive > Category.Active
+	m	Client.IsConnected > Client.Connected
+	m	CrextorResource.IsActive > CrextorResource.Active
+	m	Crextor.IsPaid > Crextor.Paid
+	m	Crextor.IsCrawled > Crextor.Crawled
+	m	Crextor.IsActive > Crextor.Active
+	a	CrextorUrl.Active BIT DEFAULT (0)
+	m	Rule.IsLocked > Rule.Locked
+	m	Server.IsActive > Server.Active
+	m	UrlQueue.IsSelected > UrlQueue.Selected
+	m	UrlQueue.IsCrawled > UrlQueue.Crawled
+	m	UrlQueue.IsActive > UrlQueue.Active

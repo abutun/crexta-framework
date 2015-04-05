@@ -1,0 +1,30 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="abbSolutions.Communication.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="MaxSimultaneousIncomingConnections" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">6</Value>
+    </Setting>
+    <Setting Name="MaxSendThreads" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">8</Value>
+    </Setting>
+    <Setting Name="MaxReceiveThreads" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">8</Value>
+    </Setting>
+    <Setting Name="MaxProcessThreads" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">4</Value>
+    </Setting>
+    <Setting Name="MaxAcceptIncomingThreads" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">6</Value>
+    </Setting>
+    <Setting Name="JoinPacketsIfSizeBelow" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">15000</Value>
+    </Setting>
+    <Setting Name="MaxIncomingBytesToReadAtOnce" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">600000</Value>
+    </Setting>
+    <Setting Name="MaxOutgoingPacketSize" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">131072</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,17 @@
+Upload
+	- ClientSetup
+	- ServerSetup
+	- ExplorerSetup
+
+Run
+	- ClientSetup
+	- ServerSetup
+	- ExplorerSetup
+
+
+Change ConnectionStrings in
+	
+	- Client folder app.config (CLIENT DOES NOT NEED CONNSTR!!!)
+	- Server folder app.config
+	- Server folder log4net.config
+	- Explorer folder app.config

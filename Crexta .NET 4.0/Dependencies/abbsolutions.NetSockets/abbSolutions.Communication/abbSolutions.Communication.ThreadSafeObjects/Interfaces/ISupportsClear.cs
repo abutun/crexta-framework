@@ -1,0 +1,10 @@
+﻿using System.ComponentModel;
+
+namespace abbSolutions.Communication.ThreadSafeObjects
+{
+   [Browsable(true), TypeConverter(typeof(ExpandableObjectConverter))]
+   public interface ISupportsClear
+   {
+      void Clear();
+   }
+}

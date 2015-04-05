@@ -1,0 +1,437 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Crexta" Class="CrextaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(local);Initial Catalog=Crexta;Persist Security Info=True;User ID=crexta" SettingsObjectName="Crexta.DataBase.Properties.Settings" SettingsPropertyName="CrextaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.AppLog" Member="AppLogs">
+    <Type Name="AppLog">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Thread" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="[Level]" Member="Level" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Logger" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Message" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Exception" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Brand" Member="Brands">
+    <Type Name="Brand">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="[Desc]" Member="Desc" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Tags" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Flags" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="LogoPath" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Association Name="Brand_BrandKeyword" Member="BrandKeywords" ThisKey="Id" OtherKey="BrandId" Type="BrandKeyword" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BrandKeyword" Member="BrandKeywords">
+    <Type Name="BrandKeyword">
+      <Column Name="BrandId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="KwId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Factor" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="Brand_BrandKeyword" Member="Brand" ThisKey="BrandId" OtherKey="Id" Type="Brand" IsForeignKey="true" />
+      <Association Name="Keyword_BrandKeyword" Member="Keyword" ThisKey="KwId" OtherKey="Id" Type="Keyword" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Category" Member="Categories">
+    <Type Name="Category">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ParentId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="[Desc]" Member="Desc" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Tags" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Flags" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Category_CategoryKeyword" Member="CategoryKeywords" ThisKey="Id" OtherKey="CategoryId" Type="CategoryKeyword" />
+      <Association Name="Category_CrextorResource" Member="CrextorResources" ThisKey="Id" OtherKey="CategoryId" Type="CrextorResource" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CategoryKeyword" Member="CategoryKeywords">
+    <Type Name="CategoryKeyword">
+      <Column Name="CategoryId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="KwId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Factor" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="Category_CategoryKeyword" Member="Category" ThisKey="CategoryId" OtherKey="Id" Type="Category" IsForeignKey="true" />
+      <Association Name="Keyword_CategoryKeyword" Member="Keyword" ThisKey="KwId" OtherKey="Id" Type="Keyword" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.City" Member="Cities">
+    <Type Name="City">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CountryId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="Tags" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Association Name="City_Company" Member="Companies" ThisKey="Id" OtherKey="CityId" Type="Company" />
+      <Association Name="Country_City" Member="Country" ThisKey="CountryId" OtherKey="Id" Type="Country" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Client" Member="Clients">
+    <Type Name="Client">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CountryId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UniqueHash" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Guid" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="ExternalIp" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="LocalIp" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Mac" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="Instance" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="CurrentMode" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="ItemCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="ServerId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UselocalId" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Connected" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Client_UrlQueue" Member="UrlQueues" ThisKey="Id" OtherKey="UFClientId" Type="UrlQueue" />
+      <Association Name="Country_Client" Member="Country" ThisKey="CountryId" OtherKey="Id" Type="Country" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Company" Member="Companies">
+    <Type Name="Company">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CityId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CountryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Address1" Type="System.String" DbType="VarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Address2" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Fax" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="SecretKey" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Ip" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Association Name="Company_Crextor" Member="Crextors" ThisKey="Id" OtherKey="CompanyId" Type="Crextor" />
+      <Association Name="Company_DbField" Member="DbFields" ThisKey="Id" OtherKey="CompanyId" Type="DbField" />
+      <Association Name="Company_ResultAccess" Member="ResultAccesses" ThisKey="Id" OtherKey="CompanyId" Type="ResultAccess" />
+      <Association Name="Company_Rule" Member="Rules" ThisKey="Id" OtherKey="CompanyId" Type="Rule" />
+      <Association Name="City_Company" Member="City" ThisKey="CityId" OtherKey="Id" Type="City" IsForeignKey="true" />
+      <Association Name="Country_Company" Member="Country" ThisKey="CountryId" OtherKey="Id" Type="Country" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Country" Member="Countries">
+    <Type Name="Country">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="Code" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Association Name="Country_City" Member="Cities" ThisKey="Id" OtherKey="CountryId" Type="City" />
+      <Association Name="Country_Client" Member="Clients" ThisKey="Id" OtherKey="CountryId" Type="Client" />
+      <Association Name="Country_Company" Member="Companies" ThisKey="Id" OtherKey="CountryId" Type="Company" />
+      <Association Name="Country_Crextor" Member="Crextors" ThisKey="Id" OtherKey="CountryId" Type="Crextor" />
+      <Association Name="Country_Server" Member="Servers" ThisKey="Id" OtherKey="CountryId" Type="Server" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Crextor" Member="Crextors">
+    <Type Name="Crextor">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RuleId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GroupId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CountryId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ShortName" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Tags" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Url" Type="System.String" DbType="NVarChar(2083) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalItems" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ExtraDomains" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="SkipUrls" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="LogoPath" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="LastCrawlStart" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="LastCrawlFinish" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="Paid" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Crawled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="UseResources" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Rating" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Priority" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="Crextor_CrextorResource" Member="CrextorResources" ThisKey="Id" OtherKey="CrextorId" Type="CrextorResource" />
+      <Association Name="Crextor_CrextorSchedule" Member="CrextorSchedule" ThisKey="Id" OtherKey="CrextorId" Type="CrextorSchedule" Cardinality="One" />
+      <Association Name="Crextor_CrextorUrl" Member="CrextorUrls" ThisKey="Id" OtherKey="CrextorId" Type="CrextorUrl" />
+      <Association Name="Crextor_Result" Member="Results" ThisKey="Id" OtherKey="CrextorId" Type="Result" />
+      <Association Name="Crextor_ResultAccess" Member="ResultAccesses" ThisKey="Id" OtherKey="CrextorId" Type="ResultAccess" />
+      <Association Name="Crextor_UrlQueue" Member="UrlQueues" ThisKey="Id" OtherKey="CrextorId" Type="UrlQueue" />
+      <Association Name="Company_Crextor" Member="Company" ThisKey="CompanyId" OtherKey="Id" Type="Company" IsForeignKey="true" />
+      <Association Name="Country_Crextor" Member="Country" ThisKey="CountryId" OtherKey="Id" Type="Country" IsForeignKey="true" />
+      <Association Name="CrextorGroup_Crextor" Member="CrextorGroup" ThisKey="GroupId" OtherKey="Id" Type="CrextorGroup" IsForeignKey="true" />
+      <Association Name="Rule_Crextor" Member="Rule" ThisKey="RuleId" OtherKey="Id" Type="Rule" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CrextorGroup" Member="CrextorGroups">
+    <Type Name="CrextorGroup">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ParentId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Association Name="CrextorGroup_Crextor" Member="Crextors" ThisKey="Id" OtherKey="GroupId" Type="Crextor" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CrextorResource" Member="CrextorResources">
+    <Type Name="CrextorResource">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CrextorId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CategoryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TypeId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="[Key]" Member="Key" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="ParentKey" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Url" Type="System.String" DbType="NVarChar(2083) NOT NULL" CanBeNull="false" />
+      <Column Name="OverrideCategory" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DiscoverRedirects" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="[Order]" Member="Order" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Category_CrextorResource" Member="Category" ThisKey="CategoryId" OtherKey="Id" Type="Category" IsForeignKey="true" />
+      <Association Name="Crextor_CrextorResource" Member="Crextor" ThisKey="CrextorId" OtherKey="Id" Type="Crextor" IsForeignKey="true" />
+      <Association Name="ResourceType_CrextorResource" Member="ResourceType" ThisKey="TypeId" OtherKey="Id" Type="ResourceType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CrextorSchedule" Member="CrextorSchedules">
+    <Type Name="CrextorSchedule">
+      <Column Name="CrextorId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="Time" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="Monday" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Tuesday" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Wednesday" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Thursday" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Friday" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Saturday" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Sunday" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="[From]" Member="From" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="[To]" Member="To" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="Minutes" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="LastRun" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Association Name="Crextor_CrextorSchedule" Member="Crextor" ThisKey="CrextorId" OtherKey="Id" Type="Crextor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CrextorUrl" Member="CrextorUrls">
+    <Type Name="CrextorUrl">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CrextorId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="[Key]" Member="Key" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ParentKey" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Url" Type="System.String" DbType="NVarChar(2083) NOT NULL" CanBeNull="false" />
+      <Column Name="PagePattern" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="HasPaging" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OverrideCategory" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="[Order]" Member="Order" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Crextor_CrextorUrl" Member="Crextor" ThisKey="CrextorId" OtherKey="Id" Type="Crextor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DbField" Member="DbFields">
+    <Type Name="DbField">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FieldName" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="FieldType" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="DefaultValue" Type="System.String" DbType="VarChar(256) NOT NULL" CanBeNull="false" />
+      <Association Name="Company_DbField" Member="Company" ThisKey="CompanyId" OtherKey="Id" Type="Company" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Download" Member="Downloads">
+    <Type Name="Download">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ViaWeb" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ViaService" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ClientId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ip" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Keyword" Member="Keywords">
+    <Type Name="Keyword">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Keyword" Member="Keyword1" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
+      <Association Name="Keyword_BrandKeyword" Member="BrandKeywords" ThisKey="Id" OtherKey="KwId" Type="BrandKeyword" />
+      <Association Name="Keyword_CategoryKeyword" Member="CategoryKeywords" ThisKey="Id" OtherKey="KwId" Type="CategoryKeyword" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Log]" Member="Logs">
+    <Type Name="Log">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RefId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Instance" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Machine" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="ExternalIp" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="LocalIp" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Action" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="XField1" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="XField2" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="XField3" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ResourceType" Member="ResourceTypes">
+    <Type Name="ResourceType">
+      <Column Name="Id" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="[Desc]" Member="Desc" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Association Name="ResourceType_CrextorResource" Member="CrextorResources" ThisKey="Id" OtherKey="TypeId" Type="CrextorResource" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Result" Member="Results">
+    <Type Name="Result">
+      <Column Name="CrextorId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QueueId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Result" Member="Result1" Type="System.Xml.Linq.XElement" DbType="Xml NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="ErrorCode" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ErrorText" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime2 NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Association Name="Crextor_Result" Member="Crextor" ThisKey="CrextorId" OtherKey="Id" Type="Crextor" IsForeignKey="true" />
+      <Association Name="UrlQueue_Result" Member="UrlQueue" ThisKey="QueueId" OtherKey="Id" Type="UrlQueue" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ResultAccess" Member="ResultAccesses">
+    <Type Name="ResultAccess">
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CrextorId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ip" Type="System.String" DbType="VarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Company_ResultAccess" Member="Company" ThisKey="CompanyId" OtherKey="Id" Type="Company" IsForeignKey="true" />
+      <Association Name="Crextor_ResultAccess" Member="Crextor" ThisKey="CrextorId" OtherKey="Id" Type="Crextor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Rule]" Member="Rules">
+    <Type Name="Rule">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Path" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Data" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="Locked" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Rule_Crextor" Member="Crextors" ThisKey="Id" OtherKey="RuleId" Type="Crextor" />
+      <Association Name="Rule_RuleBackup" Member="RuleBackups" ThisKey="Id" OtherKey="RuleId" Type="RuleBackup" />
+      <Association Name="Company_Rule" Member="Company" ThisKey="CompanyId" OtherKey="Id" Type="Company" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RuleBackup" Member="RuleBackups">
+    <Type Name="RuleBackup">
+      <Column Name="RuleId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime2 NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Data" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="Rule_RuleBackup" Member="Rule" ThisKey="RuleId" OtherKey="Id" Type="Rule" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sequence" Member="Sequences">
+    <Type Name="Sequence">
+      <Column Name="Type" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SubType" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Server" Member="Servers">
+    <Type Name="Server">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CountryId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UniqueHash" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="ComputerName" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="ExternalIp" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="LocalIp" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Mac" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="Instance" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Socket" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ClientCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Association Name="Server_UrlQueue" Member="UrlQueues" ThisKey="Id" OtherKey="ServerId" Type="UrlQueue" />
+      <Association Name="Country_Server" Member="Country" ThisKey="CountryId" OtherKey="Id" Type="Country" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UrlQueue" Member="UrlQueues">
+    <Type Name="UrlQueue">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CrextorId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ServerId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UFClientId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DEClientId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ItemType" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="PubDate" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="UrlHash" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="UrlHash1" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Url" Type="System.String" DbType="NVarChar(2083) NOT NULL" CanBeNull="false" />
+      <Column Name="UrlMiniPart" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="RetryCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CrawlStart" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="CrawlFinish" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="Crawled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Selected" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Priority" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="HasError" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="UrlQueue_Result" Member="Results" ThisKey="Id" OtherKey="QueueId" Type="Result" />
+      <Association Name="Crextor_UrlQueue" Member="Crextor" ThisKey="CrextorId" OtherKey="Id" Type="Crextor" IsForeignKey="true" />
+      <Association Name="Client_UrlQueue" Member="Client" ThisKey="UFClientId" OtherKey="Id" Type="Client" IsForeignKey="true" />
+      <Association Name="Server_UrlQueue" Member="Server" ThisKey="ServerId" OtherKey="Id" Type="Server" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Version" Member="Versions">
+    <Type Name="Version">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Member="Version1" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.CREXTORS_GetDataset" Method="CREXTORS_GetDataset">
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Type" Parameter="type" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SubType" Parameter="subType" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Refid" Parameter="refid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Instance" Parameter="instance" Type="System.String" DbType="VarChar(64)" />
+    <Parameter Name="ExternalIp" Parameter="externalIp" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="LocalIp" Parameter="localIp" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="Machine" Parameter="machine" Type="System.String" DbType="VarChar(64)" />
+    <ElementType Name="CREXTORS_GetDatasetResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Crawled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LastCrawlStart" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SEQUENCE_SetPageIndex" Method="SEQUENCE_SetPageIndex">
+    <Parameter Name="Type" Parameter="type" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SubType" Parameter="subType" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Refid" Parameter="refid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Instance" Parameter="instance" Type="System.String" DbType="VarChar(64)" />
+    <Parameter Name="ExternalIp" Parameter="externalIp" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="LocalIp" Parameter="localIp" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="Machine" Parameter="machine" Type="System.String" DbType="VarChar(64)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CREXTORS_GetPageIndex" Method="CREXTORS_GetPageIndex">
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Type" Parameter="type" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SubType" Parameter="subType" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Refid" Parameter="refid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Instance" Parameter="instance" Type="System.String" DbType="VarChar(64)" />
+    <Parameter Name="ExternalIp" Parameter="externalIp" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="LocalIp" Parameter="localIp" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="Machine" Parameter="machine" Type="System.String" DbType="VarChar(64)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.LOGS_LogAction" Method="LOGS_LogAction">
+    <Parameter Name="Type" Parameter="type" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SubType" Parameter="subType" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Refid" Parameter="refid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Instance" Parameter="instance" Type="System.String" DbType="VarChar(64)" />
+    <Parameter Name="ExternalIp" Parameter="externalIp" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="LocalIp" Parameter="localIp" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="Machine" Parameter="machine" Type="System.String" DbType="VarChar(64)" />
+    <Parameter Name="Action" Parameter="action" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SEQUENCE_ResetPageIndex" Method="SEQUENCE_ResetPageIndex">
+    <Parameter Name="Type" Parameter="type" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SubType" Parameter="subType" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Refid" Parameter="refid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Instance" Parameter="instance" Type="System.String" DbType="VarChar(64)" />
+    <Parameter Name="ExternalIp" Parameter="externalIp" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="LocalIp" Parameter="localIp" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="Machine" Parameter="machine" Type="System.String" DbType="VarChar(64)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

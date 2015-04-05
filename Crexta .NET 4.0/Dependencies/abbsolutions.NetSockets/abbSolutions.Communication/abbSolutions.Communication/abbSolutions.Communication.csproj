@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FDED468D-5EF7-45CA-BD02-C0CED1343F6F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>abbSolutions.Communication</RootNamespace>
+    <AssemblyName>abbSolutions.Communication</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SendReceiveBuffer.cs" />
+    <Compile Include="Message.cs" />
+    <Compile Include="MessageHeader.cs" />
+    <Compile Include="MessageBuffer.cs" />
+    <Compile Include="IncomingConnection.cs" />
+    <Compile Include="OutgoingConnection.cs" />
+    <Compile Include="ConnectionBase.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Protocols\TCPIPSocketProtocol.cs" />
+    <Compile Include="Protocols\TCPIPProtocol.cs" />
+    <Compile Include="Server.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\abbSolutions.Communication.Extensions\abbSolutions.Communication.Extensions.csproj">
+      <Project>{4A5E2C79-E156-45C7-9317-D0A272A411E6}</Project>
+      <Name>abbSolutions.Communication.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\abbSolutions.Communication.IndependentInterfaces\abbSolutions.Communication.IndependentInterfaces.csproj">
+      <Project>{038E854A-D730-4542-9507-80CE29ABCAB9}</Project>
+      <Name>abbSolutions.Communication.IndependentInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\abbSolutions.Communication.HyperTypeDescriptor\abbSolutions.Communication.HyperTypeDescriptor.csproj">
+      <Project>{CDDEAC07-7F77-4E17-9C1B-995D04AB6859}</Project>
+      <Name>abbSolutions.Communication.HyperTypeDescriptor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\abbSolutions.Communication.Interfaces\abbSolutions.Communication.Interfaces.csproj">
+      <Project>{0ED2426D-6BBA-4535-BC90-80CE54498777}</Project>
+      <Name>abbSolutions.Communication.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\abbSolutions.Communication.Logging\abbSolutions.Communication.Logging.csproj">
+      <Project>{D3A596F2-2095-40C1-B0FD-C50F164D7644}</Project>
+      <Name>abbSolutions.Communication.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\abbSolutions.Communication.ThreadSafeObjects\abbSolutions.Communication.ThreadSafeObjects.csproj">
+      <Project>{4DE75299-58AD-4C2C-B052-C38B4F4CD7F4}</Project>
+      <Name>abbSolutions.Communication.ThreadSafeObjects</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

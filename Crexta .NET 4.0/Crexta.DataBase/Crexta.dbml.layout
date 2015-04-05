@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 22.75, 29.125" name="Crexta">
+  <DataContextMoniker Name="/CrextaDataContext" />
+  <nestedChildShapes>
+    <classShape Id="7d4268ce-80aa-4f6a-a0b3-3b34b7b9eb9d" absoluteBounds="3.75, 4.75, 2, 1.9178898111979166">
+      <DataClassMoniker Name="/CrextaDataContext/AppLog" />
+      <nestedChildShapes>
+        <elementListCompartment Id="833838f6-ba1b-49e5-a5e7-7f9ed33064fb" absoluteBounds="3.765, 5.21, 1.9700000000000002, 1.3578898111979165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4ac45079-0859-4164-9294-402b8953dd19" absoluteBounds="0.75, 5.75, 2, 1.7535424804687505">
+      <DataClassMoniker Name="/CrextaDataContext/Brand" />
+      <nestedChildShapes>
+        <elementListCompartment Id="de5d3b77-8f65-42de-a22c-2ead59d31bca" absoluteBounds="0.765, 6.21, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e59cf264-8878-47d8-8a91-031d0dc7fb5c" absoluteBounds="3.5, 2, 2, 1.2605004882812503">
+      <DataClassMoniker Name="/CrextaDataContext/BrandKeyword" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2bdc9f79-23d0-4b3b-94f8-23eb5e8c0cb4" absoluteBounds="3.515, 2.46, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c6c2950b-e4b1-4c6a-9a05-62404fa66a42" absoluteBounds="17.75, 22.5, 2, 1.9178898111979166">
+      <DataClassMoniker Name="/CrextaDataContext/Category" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dc60c3ec-ef7b-49a2-a271-485f2e6089fc" absoluteBounds="17.765, 22.96, 1.9700000000000002, 1.3578898111979165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3a10601c-5640-4c36-a783-4728c4d8a435" absoluteBounds="20.5, 12.625, 2, 1.2605004882812487">
+      <DataClassMoniker Name="/CrextaDataContext/CategoryKeyword" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7e80da6e-79cc-406c-b627-403eaf90cb80" absoluteBounds="20.515, 13.085, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bfeb9b59-9bf6-4272-8f2b-d79b120e6c26" absoluteBounds="3.5, 14.125, 2, 1.4248478190104166">
+      <DataClassMoniker Name="/CrextaDataContext/City" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6a837a5c-5d8d-40ec-b826-bd022603e2ce" absoluteBounds="3.515, 14.585, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e7af829a-bf2e-4ad9-bee6-f4dfb949a6a2" absoluteBounds="3.5, 20, 2, 3.2326684570312523">
+      <DataClassMoniker Name="/CrextaDataContext/Client" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2efa09fc-3dce-4daa-bb3d-57c87b278b37" absoluteBounds="3.515, 20.46, 1.9700000000000002, 2.67266845703125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="410f98f5-bb0a-4743-bd28-7a83b34aace2" absoluteBounds="6.25, 15.5, 2, 2.5752791341145826">
+      <DataClassMoniker Name="/CrextaDataContext/Company" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c228f610-8967-4ab7-b842-d8f3d05929d9" absoluteBounds="6.265, 15.96, 1.9700000000000002, 2.015279134114583" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="732a18d7-b6c6-44d4-80c6-81b37aceac8d" absoluteBounds="0.75, 18.125, 2, 1.2605004882812523">
+      <DataClassMoniker Name="/CrextaDataContext/Country" />
+      <nestedChildShapes>
+        <elementListCompartment Id="31ceb833-b7ed-4b5f-8539-3a4bff1b6d0e" absoluteBounds="0.765, 18.585, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7cdad5e6-faaa-4255-8d77-9fcb43548950" absoluteBounds="14.75, 15.25, 2, 4.3830997721354166">
+      <DataClassMoniker Name="/CrextaDataContext/Crextor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="02f6ee38-e000-4aae-a080-130a15b6969a" absoluteBounds="14.765, 15.71, 1.9700000000000002, 3.823099772135417" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ba6024b6-65a9-4bc0-a7c4-5d178f12e658" absoluteBounds="12, 14.75, 2, 1.2605004882812505">
+      <DataClassMoniker Name="/CrextaDataContext/CrextorGroup" />
+      <nestedChildShapes>
+        <elementListCompartment Id="81b97f67-37bb-4335-8681-7426bcc651e8" absoluteBounds="12.015, 15.21, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8d904406-c861-4061-a7c1-f27d1653b26c" absoluteBounds="20.5, 16, 2, 2.7396264648437523">
+      <DataClassMoniker Name="/CrextaDataContext/CrextorResource" />
+      <nestedChildShapes>
+        <elementListCompartment Id="81d1a208-5202-4fea-9b9c-e1469f2ac5b4" absoluteBounds="20.515, 16.46, 1.9700000000000002, 2.17962646484375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1b078782-6a9f-4a8b-8262-cf6820c0c199" absoluteBounds="17.5, 25.625, 2, 3.2326684570312523">
+      <DataClassMoniker Name="/CrextaDataContext/CrextorSchedule" />
+      <nestedChildShapes>
+        <elementListCompartment Id="75e24f8d-5256-4b91-bee5-ca2711e9dc2a" absoluteBounds="17.515, 26.085, 1.9700000000000002, 2.67266845703125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8ef73022-d2d1-4760-a1cd-a13f5a19403f" absoluteBounds="17.5, 18.75, 2, 2.5752791341145809">
+      <DataClassMoniker Name="/CrextaDataContext/CrextorUrl" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1f65e9cc-3a59-46ce-88ed-51f396fefe31" absoluteBounds="17.515, 19.21, 1.9700000000000002, 2.015279134114583" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b6f02902-73d4-49e2-934b-b305128eb696" absoluteBounds="9, 14.625, 2, 1.5891951497395844">
+      <DataClassMoniker Name="/CrextaDataContext/DbField" />
+      <nestedChildShapes>
+        <elementListCompartment Id="97ddc54e-c068-458a-ae65-d00f0c090831" absoluteBounds="9.015, 15.085, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="74dea054-fb3d-4d00-8cf0-7de031001ebc" absoluteBounds="6.75, 0.75, 2, 1.7535424804687503">
+      <DataClassMoniker Name="/CrextaDataContext/Download" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dd034696-2e8f-47e4-807a-f77c0a5e71ad" absoluteBounds="6.765, 1.21, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c9bcab43-4e8e-402f-b644-31a839997a70" absoluteBounds="0.75, 2.125, 2, 1.0961531575520835">
+      <DataClassMoniker Name="/CrextaDataContext/Keyword" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0b3d8036-949b-4b1e-8b10-ba73a0a22e0a" absoluteBounds="0.765, 2.585, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2989fbd0-7cee-4335-9b62-716a07ed7bdb" absoluteBounds="6.75, 3.75, 2, 2.9039737955729166">
+      <DataClassMoniker Name="/CrextaDataContext/Log" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5d25da0c-5b1b-4c68-93ff-e23fec1778d4" absoluteBounds="6.765, 4.21, 1.9700000000000002, 2.3439737955729165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2c6383dd-2a46-42ed-b3b1-97fe8e9fd704" absoluteBounds="17.75, 10.375, 2, 1.2605004882812487">
+      <DataClassMoniker Name="/CrextaDataContext/ResourceType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c01a6eb9-c7e0-4f36-b5a9-0f06f7bda8ca" absoluteBounds="17.765, 10.835, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="239ac38a-eb20-4b1a-ab28-bb9775919682" absoluteBounds="17.5, 13.5, 2, 1.9178898111979166">
+      <DataClassMoniker Name="/CrextaDataContext/Result" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cb0973bc-5616-4252-86f0-c2a8e0ac9d0c" absoluteBounds="17.515, 13.96, 1.9700000000000002, 1.3578898111979165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b307583a-c336-4742-8b5e-e48fe8f40b98" absoluteBounds="17.5, 16.75, 2, 1.2605004882812523">
+      <DataClassMoniker Name="/CrextaDataContext/ResultAccess" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fd612aa6-1c40-49cf-a33e-52ec71718ab2" absoluteBounds="17.515, 17.21, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="568e9778-c2fc-4b35-a152-6e7c8ee62443" absoluteBounds="9, 17, 2, 1.9178898111979166">
+      <DataClassMoniker Name="/CrextaDataContext/Rule" />
+      <nestedChildShapes>
+        <elementListCompartment Id="476fb000-85bb-4b9a-ad42-7190305cacdb" absoluteBounds="9.015, 17.46, 1.9700000000000002, 1.3578898111979165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="46471dc2-4bdb-456a-a83f-aeed32c1ae20" absoluteBounds="11.75, 17.25, 2, 1.4248478190104166">
+      <DataClassMoniker Name="/CrextaDataContext/RuleBackup" />
+      <nestedChildShapes>
+        <elementListCompartment Id="91e25fad-682e-4fdd-9e37-8353cec4df55" absoluteBounds="11.765, 17.71, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3897e4e2-50f3-4b35-b6c8-f8033b1d71b0" absoluteBounds="3.75, 7.75, 2, 1.2605004882812496">
+      <DataClassMoniker Name="/CrextaDataContext/Sequence" />
+      <nestedChildShapes>
+        <elementListCompartment Id="faaadb98-40e6-4cb0-840e-e96a89ae4426" absoluteBounds="3.765, 8.21, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4a404486-2f6c-4dfe-817a-b12fba33b5be" absoluteBounds="3.5, 16.375, 2, 2.9039737955729166">
+      <DataClassMoniker Name="/CrextaDataContext/Server" />
+      <nestedChildShapes>
+        <elementListCompartment Id="50cfd922-31e5-4139-9fc2-418a3526cc7d" absoluteBounds="3.515, 16.835, 1.9700000000000002, 2.3439737955729165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="aee3a404-bc89-42a0-b23a-1904edac3344" absoluteBounds="20.5, 20, 2, 4.3830997721354166">
+      <DataClassMoniker Name="/CrextaDataContext/UrlQueue" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f72df1ea-83bf-4d15-bcbb-a17cec7be74c" absoluteBounds="20.515, 20.46, 1.9700000000000002, 3.823099772135417" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4824ab7f-1875-4d86-82b7-fb2e1c861432" absoluteBounds="6.75, 7.75, 2, 1.2605004882812496">
+      <DataClassMoniker Name="/CrextaDataContext/Version" />
+      <nestedChildShapes>
+        <elementListCompartment Id="79f1642a-2abb-4dcf-8122-1d0dc80e47c7" absoluteBounds="6.765, 8.21, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 7.11696614583333); (3.04166666666667 : 7.11696614583333 : JumpStart); (3.20833333333333 : 7.11696614583333 : JumpEnd); (3.59375 : 7.11696614583333); (3.59375 : 3.26050048828125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CrextaDataContext/Brand/Brand_BrandKeyword" />
+      <nodes>
+        <classShapeMoniker Id="4ac45079-0859-4164-9294-402b8953dd19" />
+        <classShapeMoniker Id="e59cf264-8878-47d8-8a91-031d0dc7fb5c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(19.65625 : 22.5); (19.65625 : 13.03125); (20.5 : 13.03125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CrextaDataContext/Category/Category_CategoryKeyword" />
+      <nodes>
+        <classShapeMoniker Id="c6c2950b-e4b1-4c6a-9a05-62404fa66a42" />
+        <classShapeMoniker Id="3a10601c-5640-4c36-a783-4728c4d8a435" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 14.8124995); (7.25 : 14.8124995); (7.25 : 15.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CrextaDataContext/City/City_Company" />
+      <nodes>
+        <classShapeMoniker Id="bfeb9b59-9bf6-4272-8f2b-d79b120e6c26" />
+        <classShapeMoniker Id="410f98f5-bb0a-4743-bd28-7a83b34aace2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 18.125); (1.75 : 14.8374239095052); (3.5 : 14.8374239095052)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CrextaDataContext/Country/Country_City" />
+      <nodes>
+        <classShapeMoniker Id="732a18d7-b6c6-44d4-80c6-81b37aceac8d" />
+        <classShapeMoniker Id="bfeb9b59-9bf6-4272-8f2b-d79b120e6c26" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 19.3855004882813); (1.75 : 21.6163342285156); (3.5 : 21.6163342285156)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CrextaDataContext/Country/Country_Client" />
+      <nodes>
+        <classShapeMoniker Id="732a18d7-b6c6-44d4-80c6-81b37aceac8d" />
+        <classShapeMoniker Id="e7af829a-bf2e-4ad9-bee6-f4dfb949a6a2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 19.3634871419271); (3.16666666666667 : 19.3634871419271 : JumpStart); (3.33333333333333 : 19.3634871419271 : JumpEnd); (5.5027194745593 : 19.3634871419271 : JumpStart); (5.66938614122596 : 19.3634871419271 : JumpEnd); (7.25 : 19.3634871419271); (7.25 : 18.0752791341146)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CrextaDataContext/Country/Country_Company" />
+      <nodes>
+        <classShapeMoniker Id="732a18d7-b6c6-44d4-80c6-81b37aceac8d" />
+        <classShapeMoniker Id="410f98f5-bb0a-4743-bd28-7a83b34aace2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 16.6070975748698); (14.4166666666667 : 16.6070975748698 : JumpStart); (14.5833333333333 : 16.6070975748698 : JumpEnd); (14.75 : 16.6070975748698)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CrextaDataContext/Company/Company_Crextor" />
+      <nodes>
+        <classShapeMoniker Id="410f98f5-bb0a-4743-bd28-7a83b34aace2" />
+        <classShapeMoniker Id="7cdad5e6-faaa-4255-8d77-9fcb43548950" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 18.7129915709635); (3.25 : 18.7129915709635); (3.25 : 19.5289737955729); (5.66820612820513 : 19.5289737955729 : JumpStart); (5.8348727948718 : 19.5289737955729 : JumpEnd); (14.5 : 19.5289737955729); (14.5 : 19.8830997721354); (15.1354141666667 : 19.8830997721354 : JumpStart); (15.3020808333333 : 19.8830997721354 : JumpEnd); (15.75 : 19.8830997721354); (15.75 : 19.6330997721354)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CrextaDataContext/Country/Country_Crextor" />
+      <nodes>
+        <classShapeMoniker Id="732a18d7-b6c6-44d4-80c6-81b37aceac8d" />
+        <classShapeMoniker Id="7cdad5e6-faaa-4255-8d77-9fcb43548950" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14 : 15.6302502441406); (14.4166666666667 : 15.6302502441406 : JumpStart); (14.5833333333333 : 15.6302502441406 : JumpEnd); (14.75 : 15.6302502441406)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CrextaDataContext/CrextorGroup/CrextorGroup_Crextor" />
+      <nodes>
+        <classShapeMoniker Id="ba6024b6-65a9-4bc0-a7c4-5d178f12e658" />
+        <classShapeMoniker Id="7cdad5e6-faaa-4255-8d77-9fcb43548950" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(19.6875025 : 22.5); (19.6875025 : 16.34375); (20.0416666666667 : 16.34375 : JumpStart); (20.2083333333333 : 16.34375 : JumpEnd); (20.5 : 16.34375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CrextaDataContext/Category/Category_CrextorResource" />
+      <nodes>
+        <classShapeMoniker Id="c6c2950b-e4b1-4c6a-9a05-62404fa66a42" />
+        <classShapeMoniker Id="8d904406-c861-4061-a7c1-f27d1653b26c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16.75 : 18.4063134765625); (19.5729166666667 : 18.4063134765625 : JumpStart); (19.7708358333333 : 18.4063134765625 : JumpEnd); (20.0416666666667 : 18.4063134765625 : JumpStart); (20.2083333333333 : 18.4063134765625 : JumpEnd); (20.5 : 18.4063134765625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CrextaDataContext/Crextor/Crextor_CrextorResource" />
+      <nodes>
+        <classShapeMoniker Id="7cdad5e6-faaa-4255-8d77-9fcb43548950" />
+        <classShapeMoniker Id="8d904406-c861-4061-a7c1-f27d1653b26c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16.2812525 : 19.6330997721354); (16.2812525 : 27.2413342285156); (17.5 : 27.2413342285156)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CrextaDataContext/Crextor/Crextor_CrextorSchedule" />
+      <nodes>
+        <classShapeMoniker Id="7cdad5e6-faaa-4255-8d77-9fcb43548950" />
+        <classShapeMoniker Id="1b078782-6a9f-4a8b-8262-cf6820c0c199" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16.75 : 19.1915498860677); (17.5 : 19.1915498860677)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CrextaDataContext/Crextor/Crextor_CrextorUrl" />
+      <nodes>
+        <classShapeMoniker Id="7cdad5e6-faaa-4255-8d77-9fcb43548950" />
+        <classShapeMoniker Id="8ef73022-d2d1-4760-a1cd-a13f5a19403f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 15.8570975748698); (9 : 15.8570975748698)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CrextaDataContext/Company/Company_DbField" />
+      <nodes>
+        <classShapeMoniker Id="410f98f5-bb0a-4743-bd28-7a83b34aace2" />
+        <classShapeMoniker Id="b6f02902-73d4-49e2-934b-b305128eb696" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.67307657877604); (3.5 : 2.67307657877604)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CrextaDataContext/Keyword/Keyword_BrandKeyword" />
+      <nodes>
+        <classShapeMoniker Id="c9bcab43-4e8e-402f-b644-31a839997a70" />
+        <classShapeMoniker Id="e59cf264-8878-47d8-8a91-031d0dc7fb5c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 3.22115315755208); (3.125 : 3.59615315755208); (3.125 : 12.25); (19.5260416666667 : 12.25 : JumpStart); (19.6927083333333 : 12.25 : JumpEnd); (20.125 : 12.25); (20.5 : 12.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CrextaDataContext/Keyword/Keyword_CategoryKeyword" />
+      <nodes>
+        <classShapeMoniker Id="c9bcab43-4e8e-402f-b644-31a839997a70" />
+        <classShapeMoniker Id="3a10601c-5640-4c36-a783-4728c4d8a435" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(19.609375 : 11.6355004882812); (19.609375 : 16.1406225); (20.0416666666667 : 16.1406225 : JumpStart); (20.2083333333333 : 16.1406225 : JumpEnd); (20.5 : 16.1406225)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CrextaDataContext/ResourceType/ResourceType_CrextorResource" />
+      <nodes>
+        <classShapeMoniker Id="2c6383dd-2a46-42ed-b3b1-97fe8e9fd704" />
+        <classShapeMoniker Id="8d904406-c861-4061-a7c1-f27d1653b26c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(15.75 : 15.25); (15.75 : 14.3749995); (17.5 : 14.3749995)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CrextaDataContext/Crextor/Crextor_Result" />
+      <nodes>
+        <classShapeMoniker Id="7cdad5e6-faaa-4255-8d77-9fcb43548950" />
+        <classShapeMoniker Id="239ac38a-eb20-4b1a-ab28-bb9775919682" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 16.8035512874349); (14.5 : 16.8035512874349); (14.5 : 15); (15.6666666666667 : 15 : JumpStart); (15.8333333333333 : 15 : JumpEnd); (17.25 : 15); (17.25 : 16.5); (18.5 : 16.5); (18.5 : 16.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CrextaDataContext/Company/Company_ResultAccess" />
+      <nodes>
+        <classShapeMoniker Id="410f98f5-bb0a-4743-bd28-7a83b34aace2" />
+        <classShapeMoniker Id="b307583a-c336-4742-8b5e-e48fe8f40b98" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16.75 : 17.3802502441406); (17.5 : 17.3802502441406)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CrextaDataContext/Crextor/Crextor_ResultAccess" />
+      <nodes>
+        <classShapeMoniker Id="7cdad5e6-faaa-4255-8d77-9fcb43548950" />
+        <classShapeMoniker Id="b307583a-c336-4742-8b5e-e48fe8f40b98" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 17.09375); (14.75 : 17.09375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CrextaDataContext/Rule/Rule_Crextor" />
+      <nodes>
+        <classShapeMoniker Id="568e9778-c2fc-4b35-a152-6e7c8ee62443" />
+        <classShapeMoniker Id="7cdad5e6-faaa-4255-8d77-9fcb43548950" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 17.5376395670573); (9 : 17.5376395670573)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CrextaDataContext/Company/Company_Rule" />
+      <nodes>
+        <classShapeMoniker Id="410f98f5-bb0a-4743-bd28-7a83b34aace2" />
+        <classShapeMoniker Id="568e9778-c2fc-4b35-a152-6e7c8ee62443" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 17.9624239095052); (11.75 : 17.9624239095052)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CrextaDataContext/Rule/Rule_RuleBackup" />
+      <nodes>
+        <classShapeMoniker Id="568e9778-c2fc-4b35-a152-6e7c8ee62443" />
+        <classShapeMoniker Id="46471dc2-4bdb-456a-a83f-aeed32c1ae20" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 18.3564957854818); (3.5 : 18.3564957854818)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CrextaDataContext/Country/Country_Server" />
+      <nodes>
+        <classShapeMoniker Id="732a18d7-b6c6-44d4-80c6-81b37aceac8d" />
+        <classShapeMoniker Id="4a404486-2f6c-4dfe-817a-b12fba33b5be" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(20.5 : 20); (20.125 : 19.625); (20.125 : 14.458944905599); (19.7395833333333 : 14.458944905599 : JumpStart); (19.5260416666667 : 14.458944905599 : JumpEnd); (19.5 : 14.458944905599)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CrextaDataContext/UrlQueue/UrlQueue_Result" />
+      <nodes>
+        <classShapeMoniker Id="aee3a404-bc89-42a0-b23a-1904edac3344" />
+        <classShapeMoniker Id="239ac38a-eb20-4b1a-ab28-bb9775919682" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(15.2187475 : 19.6330997721354); (15.2187475 : 21.9126395670573); (16.1979191666667 : 21.9126395670573 : JumpStart); (16.3645858333333 : 21.9126395670573 : JumpEnd); (19.5729166666667 : 21.9126395670573 : JumpStart); (19.7708358333333 : 21.9126395670573 : JumpEnd); (20.5 : 21.9126395670573)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CrextaDataContext/Crextor/Crextor_UrlQueue" />
+      <nodes>
+        <classShapeMoniker Id="7cdad5e6-faaa-4255-8d77-9fcb43548950" />
+        <classShapeMoniker Id="aee3a404-bc89-42a0-b23a-1904edac3344" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 21.5877093505859); (5.79166666666667 : 21.5877093505859 : JumpStart); (5.95833333333333 : 21.5877093505859 : JumpEnd); (15.1354141666667 : 21.5877093505859 : JumpStart); (15.3020808333333 : 21.5877093505859 : JumpEnd); (16.1979191666667 : 21.5877093505859 : JumpStart); (16.3645858333333 : 21.5877093505859 : JumpEnd); (19.5729166666667 : 21.5877093505859 : JumpStart); (19.7708358333333 : 21.5877093505859 : JumpEnd); (20.5 : 21.5877093505859)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CrextaDataContext/Client/Client_UrlQueue" />
+      <nodes>
+        <classShapeMoniker Id="e7af829a-bf2e-4ad9-bee6-f4dfb949a6a2" />
+        <classShapeMoniker Id="aee3a404-bc89-42a0-b23a-1904edac3344" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 19.2774343340345); (5.875 : 19.6524343340345); (5.875 : 22.2063222835286); (16.1979191666667 : 22.2063222835286 : JumpStart); (16.3645858333333 : 22.2063222835286 : JumpEnd); (19.5729166666667 : 22.2063222835286 : JumpStart); (19.7708358333333 : 22.2063222835286 : JumpEnd); (20.5 : 22.2063222835286)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CrextaDataContext/Server/Server_UrlQueue" />
+      <nodes>
+        <classShapeMoniker Id="4a404486-2f6c-4dfe-817a-b12fba33b5be" />
+        <classShapeMoniker Id="aee3a404-bc89-42a0-b23a-1904edac3344" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

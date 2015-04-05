@@ -1,0 +1,228 @@
+07.04.2012
+-----------------
+
+* Switch Clients (both Client.cs and CrextaClient.cs) to LIVE mode!
+
+DB CHANGES
+
+	m	AppLogs > AppLog
+	m	BrandKeywords > BrandKeyword
+	m	Brands > Brand
+	m	Categories > Category
+	m	CategoryKeywords > CategoryKeyword
+	m	Clients > Client
+	m	CrextorGroups > CrextorGroup
+	m	CrextorResources > CrextorResource
+	m	Crextors > Crextor
+	m	CrextorSchedules > CrextorSchedule
+	m	CrextorUrls > CrextorUrl
+	m	DbFields > DbField
+	m	Downloads > Download
+	m	Keywords > Keyword
+	m	Logs > Log
+	m	ResourceTypes > ResourceType
+	m	ResultAccesses > ResultAccess
+	m	Results > Result
+	m	RuleBackups > RuleBackup
+	m	Rules > Rules
+	m	Servers > Server
+	m	Versions > Version
+
+	m	Category.IsActive > Category.Active
+	m	Client.IsConnected > Client.Connected
+	m	CrextorResource.IsActive > CrextorResource.Active
+	m	Crextor.IsPaid > Crextor.Paid
+	m	Crextor.IsCrawled > Crextor.Crawled
+	m	Crextor.IsActive > Crextor.Active
+	a	CrextorUrl.Active BIT DEFAULT (0)
+	m	Rule.IsLocked > Rule.Locked
+	m	Server.IsActive > Server.Active
+	m	UrlQueue.IsSelected > UrlQueue.Selected
+	m	UrlQueue.IsCrawled > UrlQueue.Crawled
+	m	UrlQueue.IsActive > UrlQueue.Active
+
+
+
+USE [Crexta]
+GO
+/****** Object:  StoredProcedure [dbo].[ResetDatabase]    Script Date: 04/07/2012 17:50:47 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[ResetDatabase]
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+	UPDATE Crexta.dbo.Crextor
+	SET Crawled = 0, 
+		LastCrawlFinish = DATEADD(DD, -5, GETDATE()), 
+		LastCrawlStart = DATEADD(DD, -5, GETDATE());
+		
+	DELETE FROM Crexta.dbo.Result;	
+	DELETE FROM Crexta.dbo.UrlQueue;
+	DELETE FROM Crexta.dbo.Log;
+	DELETE FROM Crexta.dbo.Client;
+	DELETE FROM Crexta.dbo.AppLog;
+	
+	DBCC CHECKIDENT ('Crexta.dbo.UrlQueue', RESEED,1);
+	DBCC CHECKIDENT ('Crexta.dbo.Logs', RESEED,1);
+	DBCC CHECKIDENT ('Crexta.dbo.Clients', RESEED,1);
+	DBCC CHECKIDENT ('Crexta.dbo.AppLogs', RESEED,1);
+	
+	UPDATE Crexta.dbo.Sequence
+	SET Value = 0;
+	
+	UPDATE Crexta.dbo.Crextor
+	SET LastCrawlFinish = NULL, LastCrawlStart = NULL
+	
+END
+
+
+USE [Crexta]
+GO
+/****** Object:  StoredProcedure [dbo].[CREXTORS_GetDataset]    Script Date: 04/07/2012 17:51:47 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+ALTER PROCEDURE [dbo].[CREXTORS_GetDataset]
+@PageSize int,
+@Type int,
+@SubType int,
+@Refid int,
+@Instance varchar(64),
+@ExternalIp varchar(15),
+@LocalIp varchar(15),
+@Machine varchar(64)
+
+AS
+
+BEGIN
+
+	SET NOCOUNT ON;
+	
+	DECLARE @PageIndex int
+	
+	--Get current page index
+	EXEC @PageIndex = CREXTORS_GetPageIndex @PageSize, @Type, @SubType, @Refid, @Instance, @ExternalIp, @LocalIp, @Machine
+	
+	IF @PageIndex=0
+		SET @PageIndex = 1
+
+	SELECT  [Id], [Crawled], [LastCrawlStart]
+	FROM     (SELECT  ROW_NUMBER() OVER (ORDER BY [Id])
+				 AS Row, [Id], [Crawled], [LastCrawlStart] FROM Crextor WITH(HOLDLOCK)
+				 WHERE [Active] = 1)
+				 AS StoresWithRowNumber
+	WHERE  Row BETWEEN (@PageIndex - 1) * @PageSize + 1 AND @PageIndex*@PageSize
+
+END
+
+
+USE [Crexta]
+GO
+/****** Object:  StoredProcedure [dbo].[CREXTORS_GetPageIndex]    Script Date: 04/07/2012 17:52:22 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+ALTER PROCEDURE [dbo].[CREXTORS_GetPageIndex]
+@PageSize int,
+@Type int = 1,
+@SubType int = 1,
+@Refid int,
+@Instance varchar(64),
+@ExternalIp varchar(15),
+@LocalIp varchar(15),
+@Machine varchar(64)
+
+AS
+
+BEGIN
+
+	SET NOCOUNT ON;
+
+	BEGIN TRAN
+
+		DECLARE @PageIndex int
+		DECLARE @TotalCount int
+
+		SET @PageIndex = -1
+
+		--Get current page index
+		EXEC @PageIndex = SEQUENCE_GetPageIndex @Type, @SubType, @Refid, @Instance, @ExternalIp, @LocalIp, @Machine
+
+		--Get total objects
+		SELECT @TotalCount = Count([Id])
+		FROM Crextor WITH(UPDLOCK)
+		WHERE [Active] = 1
+
+		IF ((@PageIndex - 1) * @PageSize + 1>@TotalCount)
+		BEGIN
+			--Reset page index
+			EXEC SEQUENCE_ResetPageIndex @Type, @SubType, @Refid, @Instance, @ExternalIp, @LocalIp, @Machine
+
+			SET @PageIndex = 1
+		END
+
+		--increment page index
+		IF @PageIndex>=0
+			EXEC SEQUENCE_SetPageIndex @Type, @SubType, @Refid, @Instance, @ExternalIp, @LocalIp, @Machine		
+
+		IF @@ERROR<>0
+		BEGIN
+			ROLLBACK TRAN
+			
+			RETURN 0
+		END
+		ELSE
+		BEGIN
+			COMMIT TRAN
+			
+			RETURN @PageIndex
+		END
+END
+
+USE [Crexta]
+GO
+/****** Object:  StoredProcedure [dbo].[LOGS_LogAction]    Script Date: 04/07/2012 17:52:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+ALTER PROCEDURE [dbo].[LOGS_LogAction]
+@Type int,
+@SubType int,
+@Refid int,
+@Instance varchar(64),
+@ExternalIp varchar(15),
+@LocalIp varchar(15),
+@Machine varchar(64),
+@Action int
+
+AS
+
+BEGIN TRAN
+
+	INSERT INTO Log([Type],[SubType],[RefId],[Instance],[Machine],[ExternalIp],[LocalIp],[Action],[Date])
+	VALUES(@Type, ISNULL(@SubType,0), @Refid, @Instance, @Machine, @ExternalIp, @LocalIp, @Action, GETDATE())
+
+	IF @@ERROR<>0
+		ROLLBACK TRAN
+	ELSE
+		COMMIT TRAN
