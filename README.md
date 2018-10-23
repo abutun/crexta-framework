@@ -28,7 +28,7 @@ https://visualstudiogallery.msdn.microsoft.com/9abe329c-9bba-44a1-be59-0fbf61510
 [![What is Crexta - 3](http://img.youtube.com/vi/KUMBgflOFHw/0.jpg)](https://www.youtube.com/watch?v=KUMBgflOFHw)
 
 ## More Information
-http://blog.ahmetbutun.net/?s=crexta
+http://ahmet.butun.kim/?s=crexta
 
 ## Contact Me
-http://www.ahmetbutun.net
+http://ahmet.butun.kim
